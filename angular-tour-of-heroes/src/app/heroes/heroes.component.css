@@ -54,3 +54,26 @@
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }
+
+input {
+  display: block;
+  width: 100%;
+  padding: .5rem;
+  margin: 1rem 0;
+  box-sizing: border-box;
+}
+
+button.delete {
+  position: absolute;
+  left: 210px;
+  top: 5px;
+  background-color: rgb(8, 95, 23);
+  color:  #000000;
+  font-size: 1.1rem;
+  margin: 0;
+  padding: 1px 10px 3px 10px;
+}
+
+button.delete:hover {
+  background-color: rgb(95, 224, 117);
+}
