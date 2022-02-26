@@ -11,12 +11,16 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+
 import { HttpClientModule} from '@angular/common/http';
 import { InMemoryDataService } from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSliderModule } from '@angular/material/slider';
+import {MatButtonModule} from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
@@ -25,7 +29,8 @@ import { MatSliderModule } from '@angular/material/slider';
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,10 @@ import { MatSliderModule } from '@angular/material/slider';
       InMemoryDataService, {dataEncapsulation: false}
     ),
     BrowserAnimationsModule,
-    MatSliderModule
+    MatSliderModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
