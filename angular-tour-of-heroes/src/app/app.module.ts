@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -22,6 +22,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,8 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     MessagesComponent,
     DashboardComponent,
     HeroSearchComponent,
+
+    
   
   ],
   imports: [
@@ -44,7 +48,8 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     MatSliderModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
