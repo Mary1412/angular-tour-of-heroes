@@ -11,6 +11,8 @@ export class AppComponent implements OnInit {
   nameControl: FormControl = new FormControl;
   isActive = false;
 
+  
+
 
   ngOnInit(){
     this.nameControl = new FormControl(' ');

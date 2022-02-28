@@ -22,6 +22,10 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 
+import {  MatStepperModule } from "@angular/material/stepper";
+
+
+
 
 @NgModule({
   declarations: [
@@ -31,6 +35,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     MessagesComponent,
     DashboardComponent,
     HeroSearchComponent,
+    
 
   ],
   imports: [
@@ -46,7 +51,8 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatStepperModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
