@@ -9,6 +9,7 @@ import { FormControl } from '@angular/forms';
 export class AppComponent implements OnInit {
   title = 'Tour of heroes';
   nameControl: FormControl = new FormControl;
+  isActive = false;
 
 
   ngOnInit(){

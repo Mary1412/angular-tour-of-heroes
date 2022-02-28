@@ -41,3 +41,10 @@ body, input[type="text"], button{
   nav a.active {
     background-color: black;
   }
+
+  .example-container {
+    padding: 16px;
+    margin-bottom: 16px;
+    width: 50px;
+  }
+
