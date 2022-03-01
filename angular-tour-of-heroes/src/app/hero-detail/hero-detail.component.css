@@ -1,23 +1,23 @@
 label {
-    color: #1d4e1c;
+    color: #26c723;
     font-weight: bold;
   }
 
   button {
     margin-top: 20px;
-    background-color: rgb(206, 250, 193);
+
     padding: 1rem;
     border-radius: 4px;
     font-size: 1rem;
   }
 
   button:hover {
-    background-color: #cff8bb;
+    background-color: #cde7be;
   }
 
   button:disabled {
-    background-color:rgb(206, 250, 193);
-    color: rgb(219, 238, 189);
+    background-color:rgb(20, 29, 17);
+    color: rgb(12, 15, 5);
     cursor: auto;
   }
 

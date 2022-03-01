@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
 import { HeroService } from '../hero.service';
+import { FormControl } from '@angular/forms';
 
 
 @Component({
@@ -11,6 +12,8 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./hero-search.component.css']
 })
 export class HeroSearchComponent implements OnInit {
+  nameControl: FormControl = new FormControl;
+  isActive = false;
 
   
   private searchTerms = new Subject<string>();

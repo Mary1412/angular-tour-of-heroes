@@ -2,6 +2,7 @@ import { MessageService } from './../message.service';
 import { Component, OnInit } from '@angular/core';
 import { Hero } from './hero';
 import { HeroService } from '../hero.service';
+import { FormControl } from '@angular/forms';
 
 
 @Component({
@@ -11,6 +12,8 @@ import { HeroService } from '../hero.service';
 })
 export class HeroesComponent implements OnInit {
 
+  nameControl: FormControl = new FormControl;
+  isActive = false;
   heroes: Hero[]=[];
 
   constructor( private heroService: HeroService, private MessageService: MessageService) { }

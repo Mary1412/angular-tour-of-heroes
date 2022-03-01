@@ -1,29 +1,30 @@
-<h1>{{title}}</h1>
-<nav>
-    <a routerLink="/dashboard">Dashboard</a>
-    <a routerLink="/heroes">Heroes</a>
-</nav>
-<router-outlet></router-outlet>
 
-<mat-slider min="1" max="100" step="1" value="50" ></mat-slider>
-<app-messages></app-messages>
-
-<input [formControl]='nameControl'>
-
-<div class="example-container"
-    [class.mat-elevation-z2]="!isActive"
-    [class.mat-elevation-z8]="isActive">
-  Example
-</div>
-
-<button mat-button (click)="isActive = !isActive">Toggle Elevation</button>
 
 <mat-horizontal-stepper>
-  <mat-step label="Step 1">
-    cat
+  <mat-step label="Tour of heroes">
+    <h1>{{title}}</h1>
+    <nav>
+        <a [class.mat-elevation-z8]="!isActive" routerLink="/dashboard">Dashboard</a>
+        <a [class.mat-elevation-z8]="!isActive" routerLink="/heroes">Heroes</a>
+    </nav>
+    <router-outlet></router-outlet>
+    <app-messages></app-messages>
+    
   </mat-step>
- <mat-step label="Step 2">
-    dog
+ <mat-step label="Angular matireals">
+  <mat-slider min="1" max="100" step="1" value="50" ></mat-slider>
+
+
+  <input [formControl]='nameControl'>
+  
+  <div class="example-container"
+      [class.mat-elevation-z2]="!isActive"
+      [class.mat-elevation-z8]="isActive">
+    Example
+  </div>
+  
+  
+  <button mat-button (click)="isActive = !isActive">Toggle Elevation</button>
   </mat-step>
 </mat-horizontal-stepper>
 

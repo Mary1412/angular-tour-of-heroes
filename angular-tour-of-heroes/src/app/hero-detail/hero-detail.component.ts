@@ -4,6 +4,7 @@ import { Hero } from '../heroes/hero';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { FormControl } from '@angular/forms';
 
 
 @Component({
@@ -15,6 +16,8 @@ import { Location } from '@angular/common';
 
 
 export class HeroDetailComponent implements OnInit {
+  nameControl: FormControl = new FormControl;
+  isActive = false;
 
   @Input() hero?: Hero;
 
