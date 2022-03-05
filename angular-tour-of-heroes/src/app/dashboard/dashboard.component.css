@@ -2,7 +2,6 @@ a {
     background-color: #237523;
     border-radius: 2px;
     padding: 1rem;
-    font-size: 1.2rem;
     text-decoration: none;
     display: inline-block;
     color: rgb(210, 248, 195);
@@ -38,3 +37,56 @@ a {
   a:hover {
     background-color: rgb(41, 63, 15);
   }
+
+  *{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    color: rgb(84, 129, 16);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+}
+
+h2,h3{
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+body{
+    margin: 2em;
+}
+
+body, input[type="text"], button{
+    color: #333;
+    font-family: Cambria, Cochin, Georgia, serif;
+}
+
+  nav a {
+    padding: 1rem;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #333;
+    color: #eef5ee98;
+    border-radius: 4px;
+    width: fit-content;
+  }
+  
+  nav a:hover {
+    color: white;
+    background-color: #465c42;
+    width: fit-content;
+  }
+
+  nav a.active {
+    background-color: black;
+  }
+
+  .example-container {
+    padding: 16px;
+    margin-bottom: 16px;
+    width: 50px;
+  }
+

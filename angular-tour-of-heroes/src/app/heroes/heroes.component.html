@@ -1,3 +1,34 @@
+
+<mat-horizontal-stepper>
+  <mat-step label="Tour of heroes">
+
+    <nav>
+        <a [class.mat-elevation-z8]="!isActive" routerLink="/dashboard">Dashboard</a>
+        <a [class.mat-elevation-z8]="!isActive" routerLink="/heroes">Heroes</a>
+    </nav>
+    <router-outlet></router-outlet>
+  
+    
+  </mat-step>
+ <mat-step label="Angular matireals">
+  <mat-slider min="1" max="100" step="1" value="50" ></mat-slider>
+
+
+  <input [formControl]='nameControl'>
+  
+  <div class="example-container"
+      [class.mat-elevation-z2]="!isActive"
+      [class.mat-elevation-z8]="isActive">
+    Example
+  </div>
+  
+  
+  <button mat-button (click)="isActive = !isActive">Toggle Elevation</button>
+  </mat-step>
+</mat-horizontal-stepper>
+
+
+
 <h2>My Heroes</h2>
 <div>
   <label for="new-hero">Hero name: </label>
@@ -16,4 +47,3 @@
       (click)="delete(hero)">x</button>
   </li>
 </ul>
-

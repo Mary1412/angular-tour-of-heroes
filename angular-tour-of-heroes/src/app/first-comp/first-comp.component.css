@@ -28,7 +28,7 @@ body, input[type="text"], button{
     text-decoration: none;
     margin-top: 10px;
     display: inline-block;
-    background-color: #333;
+    width: fit-content;
     color: #eef5ee98;
     border-radius: 4px;
   }
