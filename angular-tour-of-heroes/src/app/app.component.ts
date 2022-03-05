@@ -11,6 +11,12 @@ export class AppComponent implements OnInit {
   nameControl: FormControl = new FormControl;
   isActive = false;
 
+  data=new Date();
+  changeData(){
+    this.data=new Date();
+  }
+
+
   
 
 

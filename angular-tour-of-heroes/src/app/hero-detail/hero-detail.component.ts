@@ -17,9 +17,11 @@ import { FormControl } from '@angular/forms';
 
 export class HeroDetailComponent implements OnInit {
   nameControl: FormControl = new FormControl;
+ 
   isActive = false;
 
   @Input() hero?: Hero;
+  
 
   constructor(
     private route: ActivatedRoute,
@@ -33,7 +35,8 @@ export class HeroDetailComponent implements OnInit {
 
   getHero(): void{
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.heroService.getHero(id)
+    const name = String(this.route.snapshot.paramMap.get('name'));
+    this.heroService.getHero(id, name)
       .subscribe(hero => this.hero = hero);    
   }
 

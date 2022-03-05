@@ -9,7 +9,7 @@
 
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}">
+    <a routerLink="/detail/{{hero.id}}/{{hero.name}}">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </a>
     <button mat-raised-button  type="button" class="delete" title="delete hero"

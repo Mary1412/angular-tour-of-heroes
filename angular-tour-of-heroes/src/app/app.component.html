@@ -1,14 +1,19 @@
 
 
+
+
+
 <mat-horizontal-stepper>
   <mat-step label="Tour of heroes">
     <h1>{{title}}</h1>
     <nav>
-        <a [class.mat-elevation-z8]="!isActive" routerLink="/dashboard">Dashboard</a>
-        <a [class.mat-elevation-z8]="!isActive" routerLink="/heroes">Heroes</a>
+        <a  [class.mat-elevation-z8]="!isActive" routerLink="/dashboard">Dashboard</a>
+        <a  [class.mat-elevation-z8]="!isActive" routerLink="/heroes">Heroes</a>
+        <a  [class.mat-elevation-z8]="!isActive" routerLink="/message">Messages</a>
     </nav>
-    <router-outlet></router-outlet>
-    <app-messages></app-messages>
+   
+ 
+
     
   </mat-step>
  <mat-step label="Angular matireals">
@@ -29,4 +34,5 @@
 </mat-horizontal-stepper>
 
 
+<router-outlet></router-outlet>
 
