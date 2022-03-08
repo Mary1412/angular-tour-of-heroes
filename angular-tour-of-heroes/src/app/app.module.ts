@@ -24,6 +24,22 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 
 import {  MatStepperModule } from "@angular/material/stepper";
 import { FirstCompComponent } from './first-comp/first-comp.component';
+import { SearchPipe } from './messages/search.pipe';
+
+
+
+
+import {MatNativeDateModule} from '@angular/material/core';
+import { DaterrPipe } from './messages/daterr.pipe';
+
+
+
+
+
+
+
+
+
 
 
 
@@ -37,6 +53,12 @@ import { FirstCompComponent } from './first-comp/first-comp.component';
     DashboardComponent,
     HeroSearchComponent,
     FirstCompComponent,
+    SearchPipe,
+    DaterrPipe,
+
+    
+
+ 
     
 
   ],
@@ -55,6 +77,8 @@ import { FirstCompComponent } from './first-comp/first-comp.component';
     MatInputModule, 
     ReactiveFormsModule,
     MatStepperModule,
+
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

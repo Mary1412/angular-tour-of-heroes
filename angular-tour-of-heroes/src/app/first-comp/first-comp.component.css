@@ -31,6 +31,7 @@ body, input[type="text"], button{
     width: fit-content;
     color: #eef5ee98;
     border-radius: 4px;
+    background-color: #333;
   }
   
   nav a:hover {
@@ -47,4 +48,5 @@ body, input[type="text"], button{
     margin-bottom: 16px;
     width: 50px;
   }
+
 

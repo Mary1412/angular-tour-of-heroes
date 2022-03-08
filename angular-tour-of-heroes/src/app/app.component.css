@@ -42,9 +42,9 @@ body, input[type="text"], button{
     background-color: black;
   }
 
-  .example-container {
-    padding: 16px;
-    margin-bottom: 16px;
-    width: 50px;
+  .custum-control {
+    padding: 10px;
+    background-color: lightgoldenrodyellow;
+    border: 1px solid lightgrey;
   }
 

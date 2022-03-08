@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { MessageService } from '../message.service';
+import { Hero } from '../heroes/hero';
 
 @Component({
   selector: 'app-messages',
@@ -9,11 +10,16 @@ import { MessageService } from '../message.service';
 
  
 export class MessagesComponent implements OnInit, OnChanges {
+  searchStr='';
   
-  data=new Date();
-  changeData(){
-    this.data=new Date();
-  }
+  
+
+  tod = new  Date('December 25, 1995 13:30:00');
+  fromd =  new Date();
+
+
+
+  
 
   constructor(public messageService: MessageService, private _changeDetectorRef: ChangeDetectorRef) {
    
@@ -27,7 +33,10 @@ export class MessagesComponent implements OnInit, OnChanges {
   @Input()
   mess: any;
 
+
+
   ngOnInit(): void {
   }
 
 }
+

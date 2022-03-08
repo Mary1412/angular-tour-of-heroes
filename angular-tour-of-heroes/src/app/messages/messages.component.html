@@ -1,11 +1,43 @@
 <div *ngIf="messageService.messages.length">
 
 <h2>Messages</h2>
+
+<div class="row">
+    <div class="input-field col s6">
+        <label class="active" for="first_name">Filter of text</label>
+        <input id="first_name" class="validate" [(ngModel)]="searchStr">
+        
+    </div>
+</div>
+
+<div class="row">
+    <div class="input-field col s6">
+        <label class="active" for="fromd">From</label>
+        <input type="date"  [(ngModel)]="fromd" name="fromd">
+    </div>
+</div>
+
+<div class="row">
+    <div class="input-field col s6">
+        <label class="active" for="rod">to</label>
+        <input type="date"  [(ngModel)]="tod" name="tod">
+    </div>
+</div>
+
+
+
+
+
+
+
+
 <button mat-raised-button type="button" class="clear"
     (click)="messageService.clear()">Clear</button>
 
-<div *ngFor='let message of messageService.messages'>{{message}}</div>
+<div *ngFor='let message of messageService.messages | search:searchStr | dater:tod :fromd'>{{message}}</div>
 
 
 </div>
+
+
 

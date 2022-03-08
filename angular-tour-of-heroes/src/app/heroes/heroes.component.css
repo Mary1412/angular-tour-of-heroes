@@ -85,7 +85,8 @@ button.delete:hover {
 }
 
 .add-button{
-color: #eef5ee98;
+  color:white;
+  background-color:#333;
 }
 
 h1{
