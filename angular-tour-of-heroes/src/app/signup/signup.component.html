@@ -1,0 +1,41 @@
+<mat-card [class.mat-elevation-z8]="isActive">
+    <mat-card-title  >Sign Up</mat-card-title>
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="name"  required><br>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Surname</mat-label>
+        <input matInput placeholder="surname"  required><br>
+    </mat-form-field>
+    <br>
+        <mat-form-field appearance="fill">
+            <mat-label>login</mat-label>
+            <input matInput placeholder="login"  required><br>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label> email</mat-label>
+            <input type="email" matInput placeholder="email@email.com"  pattern="[a-z0-9._%+-]+@[a-z0-9].-]+.[a-z]{2,4}" required><br>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label> password</mat-label>
+            <input matInput placeholder="password"   required><br>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label> password second time</mat-label>
+            <input matInput placeholder="password"  required><br>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>secret word</mat-label>
+            <input matInput placeholder="secret word"><br>
+        </mat-form-field>
+        <br>
+       <button mat-raised-button color="primary">Sign up</button>
+       <a mat-raised-button href="#" target="_blank">Login</a><br><br>
+  </mat-card>
+

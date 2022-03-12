@@ -28,9 +28,13 @@ import { SearchPipe } from './messages/search.pipe';
 
 
 
-
+import {MatCardModule} from '@angular/material/card';
 import {MatNativeDateModule} from '@angular/material/core';
 import { DaterrPipe } from './messages/daterr.pipe';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { VerificationComponent } from './verification/verification.component';
+import { RepasswordComponent } from './repassword/repassword.component';
 
 
 
@@ -55,6 +59,10 @@ import { DaterrPipe } from './messages/daterr.pipe';
     FirstCompComponent,
     SearchPipe,
     DaterrPipe,
+    LoginComponent,
+    SignupComponent,
+    VerificationComponent,
+    RepasswordComponent,
 
     
 
@@ -77,7 +85,7 @@ import { DaterrPipe } from './messages/daterr.pipe';
     MatInputModule, 
     ReactiveFormsModule,
     MatStepperModule,
-
+    MatCardModule
     
   ],
   providers: [],
