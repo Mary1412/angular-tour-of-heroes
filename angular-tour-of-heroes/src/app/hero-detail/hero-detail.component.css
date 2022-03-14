@@ -28,3 +28,29 @@ label {
     font-size: 1em;
     padding: .5rem;
   }
+
+  nav a {
+    padding: 1rem;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #333;
+    color: #eef5ee98;
+    border-radius: 4px;
+  }
+  
+  nav a:hover {
+    color: white;
+    background-color: #465c42;
+  }
+
+  nav a.active {
+    background-color: black;
+  }
+
+  .custum-control {
+    padding: 10px;
+    background-color: lightgoldenrodyellow;
+    border: 1px solid lightgrey;
+  }
+

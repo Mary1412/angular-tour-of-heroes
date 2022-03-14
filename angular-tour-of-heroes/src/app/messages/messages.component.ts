@@ -11,7 +11,7 @@ import { Hero } from '../heroes/hero';
  
 export class MessagesComponent implements OnInit, OnChanges {
   searchStr='';
-  
+  isActive = true;
   
 
   tod = new  Date('December 25, 1995 13:30:00');

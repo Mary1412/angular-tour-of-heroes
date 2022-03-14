@@ -2,16 +2,18 @@
     <mat-card-title  >Login</mat-card-title>
         <mat-form-field appearance="fill">
             <mat-label>Enter login</mat-label>
-            <input matInput placeholder="login"  required><br>
+            <input [(ngModel)]="login" #spy matInput placeholder="login"  required><br>
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill">
             <mat-label>Enter password</mat-label>
-            <input matInput placeholder="password"  required><br>
+            <input type="password" matInput placeholder="password"  required><br>
         </mat-form-field>
         <br>
-       <button mat-raised-button color="primary">Login</button>
-       <a mat-raised-button href="#" target="_blank">Sign up</a><br><br>
-       <a class="linkpas" href="#" target="_blank">Forgot your password?</a>
+       <button mat-raised-button color="primary"  routerLink="/first2">Login</button>
+       <a mat-raised-button routerLink="/signup" >Sign up</a><br><br>
+       <a class="linkpas" routerLink="/verification">Forgot your password?</a>
   </mat-card>
+
+  <router-outlet></router-outlet>
 
