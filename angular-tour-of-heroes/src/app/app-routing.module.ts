@@ -10,11 +10,15 @@ import { SignupComponent } from './signup/signup.component';
 import { VerificationComponent } from './verification/verification.component';
 import { RepasswordComponent } from './repassword/repassword.component';
 import { AuthGuard } from './auth.guard';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   { path: 'heroes', component:HeroesComponent},
+  { path: 'users', component:UsersComponent},
   { path: 'dashboard', component:DashboardComponent},
   { path: 'detail/:id/:name', component:HeroDetailComponent},
+  { path: 'detailuser/:id/:name', component:UserDetailComponent},
   { path: 'message', component:MessagesComponent},
   { path: 'first2', component:FirstCompComponent, canActivate: [AuthGuard]},
   { path: 'first', component:FirstCompComponent},

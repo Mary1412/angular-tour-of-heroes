@@ -1,0 +1,24 @@
+<div>
+
+    <mat-form-field>
+      <input matInput placeholder="Name" class="aaa" [formControl]='nameControl' id="new-hero" #userName>
+  </mat-form-field>
+   
+  <mat-form-field>
+    <input matInput placeholder="Surname" class="aaa" [formControl]='nameControl' id="new-hero" #userSuname>
+</mat-form-field>
+
+    <button mat-raised-button  type="button" class="add-button" (click)="add(userName.value, userSuname.value); userName.value=''; userSuname.value=''">
+      Add hero
+    </button>
+  </div>
+
+
+<ul class="users">
+    <li *ngFor="let user of users">
+      <a routerLink="/detailuser/{{user.id}}/{{user.name}}">
+        <span class="badge">{{user.id}}</span> {{user.name}} {{user.surname}} 
+      </a>
+     
+    </li>
+  </ul>

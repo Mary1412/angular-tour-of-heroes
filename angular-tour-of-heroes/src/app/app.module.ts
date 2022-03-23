@@ -14,6 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { HttpClientModule} from '@angular/common/http';
 import { InMemoryDataService } from './in-memory-data.service';
+
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -35,6 +36,8 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { VerificationComponent } from './verification/verification.component';
 import { RepasswordComponent } from './repassword/repassword.component';
+import { UsersComponent } from './users/users.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 
 
@@ -63,6 +66,8 @@ import { RepasswordComponent } from './repassword/repassword.component';
     SignupComponent,
     VerificationComponent,
     RepasswordComponent,
+    UsersComponent,
+    UserDetailComponent,
 
     
 
@@ -77,6 +82,7 @@ import { RepasswordComponent } from './repassword/repassword.component';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, {dataEncapsulation: false}
+      
     ),
     BrowserAnimationsModule,
     MatSliderModule,

@@ -1,0 +1,24 @@
+<nav>
+    <a  [class.mat-elevation-z8]="!isActive" routerLink="/first">Start</a>
+    <a  [class.mat-elevation-z8]="!isActive" routerLink="/message">Messages</a>
+  </nav>
+
+<div *ngIf="user">
+
+
+    
+    <h2>{{ user.name  | uppercase}} {{ user.surname  | uppercase}} Users</h2>
+    <div><span>id: </span>{{user.id}}</div>
+    <div>
+        <label for="hero-name">User name: </label>
+        <input [formControl]='nameControl' id="user-name" [(ngModel)]="user.name" placeholder="name">
+    </div>
+    <div>
+        <label for="hero-surname">User surname: </label>
+        <input [formControl]='nameControl2' id="user-surname" [(ngModel)]="user.surname" placeholder="surname">
+        
+    </div>
+    <button mat-raised-button type="button" (click)="goBack()">go back</button>
+    <button mat-raised-button  type="button" (click)="save()">save</button>
+
+</div>
