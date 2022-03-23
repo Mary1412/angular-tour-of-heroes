@@ -69,6 +69,14 @@ export class UserService {
     );
   }
 
+  deleteUser(id: number, name:string, surname:string): Observable<User> {
+    this.data=new Date();
+    const url = `${this.usersUrl}/${id}`;
+    return this.http.delete<User>(url, this.httpOptions).pipe(
+      tap(_ => this.log(`deleted user id=${id} name=${name} surname=${surname} `)),
+      
+    );
+  }
  
 
  

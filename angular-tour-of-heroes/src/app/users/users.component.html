@@ -19,6 +19,7 @@
       <a routerLink="/detailuser/{{user.id}}/{{user.name}}">
         <span class="badge">{{user.id}}</span> {{user.name}} {{user.surname}} 
       </a>
-     
+      <button mat-raised-button  type="button" class="delete" title="delete user"
+      (click)="delete(user)">x</button>
     </li>
   </ul>
