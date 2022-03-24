@@ -1,9 +1,12 @@
 <mat-card [class.mat-elevation-z8]="isActive">
     <mat-card-title  >Login</mat-card-title>
-        <mat-form-field appearance="fill">
-            <mat-label>Enter login</mat-label>
-            <input [(ngModel)]="login" #spy matInput placeholder="login"  required><br>
-        </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>login</mat-label>
+        <input matInput placeholder="login" [formControl]="loginFormControl" required><br>
+        <mat-error *ngIf="!loginFormControl.hasError('required')">
+            only letters, digits
+          </mat-error>
+    </mat-form-field>
         <br>
         <mat-form-field appearance="fill">
             <mat-label>Enter password</mat-label>

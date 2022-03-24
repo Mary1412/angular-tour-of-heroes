@@ -2,23 +2,36 @@
     <mat-card-title  >Sign Up</mat-card-title>
     <mat-form-field appearance="fill">
         <mat-label>Name</mat-label>
-        <input matInput placeholder="name"  required><br>
+        <input matInput placeholder="name"  required [formControl]="nameFormControl" [errorStateMatcher]="matcher"><br>
+        <mat-error *ngIf="!nameFormControl.hasError('required')">
+            only letters, digits
+          </mat-error>
     </mat-form-field>
     <br>
     <mat-form-field appearance="fill">
         <mat-label>Surname</mat-label>
-        <input matInput placeholder="surname"  required><br>
+        <input matInput placeholder="surname"  [formControl]="surnameFormControl" required><br>
+        <mat-error *ngIf="!surnameFormControl.hasError('required')">
+            only letters, digits
+          </mat-error>
     </mat-form-field>
     <br>
         <mat-form-field appearance="fill">
             <mat-label>login</mat-label>
-            <input matInput placeholder="login"  required><br>
+            <input matInput placeholder="login" [formControl]="loginFormControl" required><br>
+            <mat-error *ngIf="!loginFormControl.hasError('required')">
+                only letters, digits
+              </mat-error>
         </mat-form-field>
         <br>
-        <mat-form-field appearance="fill">
-            <mat-label> email</mat-label>
-            <input type="email" matInput placeholder="email@email.com"  pattern="[a-z0-9._%+-]+@[a-z0-9].-]+.[a-z]{2,4}" required><br>
-        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                   placeholder="email@email.com">
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+          </mat-form-field>
         <br>
         <mat-form-field appearance="fill">
             <mat-label> password</mat-label>
