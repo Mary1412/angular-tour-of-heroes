@@ -35,12 +35,18 @@
         <br>
         <mat-form-field appearance="fill">
             <mat-label> password</mat-label>
-            <input matInput placeholder="password"   required><br>
+            <input matInput placeholder="password" [formControl]="pas1FormControl" [errorStateMatcher]="matcher"  required><br>
+            <mat-error *ngIf=" !pas1FormControl.hasError('required')">
+                It is not empty
+              </mat-error>
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill">
             <mat-label> password second time</mat-label>
-            <input matInput placeholder="password"  required><br>
+            <input matInput placeholder="password" [formControl]="pas2FormControl" [errorStateMatcher]="matcher"  required><br>
+            <mat-error *ngIf=" !pas2FormControl.hasError('required')">
+                It is not empty
+              </mat-error>
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill">
@@ -48,7 +54,14 @@
             <input matInput placeholder="secret word"><br>
         </mat-form-field>
         <br>
-       <button mat-raised-button color="primary" routerLink="/login">Sign up</button>
+       <button mat-raised-button color="primary" *ngIf="!nameFormControl.hasError('required') && !nameFormControl.hasError('pattern') 
+                                                        && !surnameFormControl.hasError('required') && !surnameFormControl.hasError('pattern') 
+                                                        && !loginFormControl.hasError('required') && !loginFormControl.hasError('pattern') 
+                                                        && !emailFormControl.hasError('email') && !emailFormControl.hasError('required')
+                                                        && !pas1FormControl.hasError('required') && !pas2FormControl.hasError('required')
+
+       
+       "routerLink="/login">Sign up</button>
        <a mat-raised-button href="#" routerLink="/login">Login</a><br><br>
   </mat-card>
 

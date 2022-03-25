@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-verification',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerificationComponent implements OnInit {
   isActive = true;
+  loginFormControl = new FormControl('', [Validators.required, Validators.pattern('^[а-яА-ЯёЁa-zA-Z0-9]+$')]);
+  swFormControl = new FormControl('', [Validators.required]);
   constructor() { }
 
   ngOnInit(): void {

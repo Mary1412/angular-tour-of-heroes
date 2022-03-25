@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-repassword',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./repassword.component.css']
 })
 export class RepasswordComponent implements OnInit {
+  pas1FormControl = new FormControl('', [Validators.required]);
+  pas2FormControl = new FormControl('', [Validators.required]);
   isActive = true;
   constructor() { }
 

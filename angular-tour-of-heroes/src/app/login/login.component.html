@@ -9,11 +9,13 @@
     </mat-form-field>
         <br>
         <mat-form-field appearance="fill">
-            <mat-label>Enter password</mat-label>
-            <input type="password" matInput placeholder="password"  required><br>
-        </mat-form-field>
+            <mat-label> Enter password</mat-label>
+            <input matInput placeholder="password" [formControl]="pas1FormControl"required><br>
+            <mat-error *ngIf=" !pas1FormControl.hasError('required')">
+                It is not empty
+              </mat-error> </mat-form-field>
         <br>
-       <button mat-raised-button color="primary"  routerLink="/first2">Login</button>
+       <button mat-raised-button color="primary" *ngIf="!pas1FormControl.hasError('required') && !loginFormControl.hasError('required')" routerLink="/first2">Login</button>
        <a mat-raised-button routerLink="/signup" >Sign up</a><br><br>
        <a class="linkpas" routerLink="/verification">Forgot your password?</a>
   </mat-card>

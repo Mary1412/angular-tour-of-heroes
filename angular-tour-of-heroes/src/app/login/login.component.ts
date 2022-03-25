@@ -10,6 +10,7 @@ export class LoginComponent implements OnInit {
   isActive = true;
   login = "";
   loginFormControl = new FormControl('', [Validators.required, Validators.pattern('^[а-яА-ЯёЁa-zA-Z0-9]+$')]);
+  pas1FormControl = new FormControl('', [Validators.required]);
 
   constructor() { }
 

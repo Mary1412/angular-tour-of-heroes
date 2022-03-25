@@ -2,13 +2,19 @@
     <mat-card-title  >Verification of user</mat-card-title>
         <mat-form-field appearance="fill">
             <mat-label>login</mat-label>
-            <input matInput placeholder="login"  required><br>
-        </mat-form-field>
+        <input matInput placeholder="login" [formControl]="loginFormControl" required><br>
+        <mat-error *ngIf="!loginFormControl.hasError('required') && !loginFormControl.hasError('pattern') ">
+            only letters, digits
+          </mat-error>
+    </mat-form-field>
         <br>
         <mat-form-field appearance="fill">
-            <mat-label>secret word</mat-label>
-            <input matInput placeholder="secret word" required><br>
-        </mat-form-field>
+            <mat-label>secreat word</mat-label>
+        <input matInput placeholder="login" [formControl]="loginFormControl" required><br>
+        <mat-error *ngIf="!swFormControl.hasError('required')  ">
+            required
+          </mat-error>
+    </mat-form-field>
         <br>
         <a mat-raised-button routerLink="/login">Back</a>
        <a mat-raised-button routerLink="/repass">Next</a><br><br>
