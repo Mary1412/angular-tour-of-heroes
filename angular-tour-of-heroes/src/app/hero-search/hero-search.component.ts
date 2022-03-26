@@ -18,7 +18,7 @@ export class HeroSearchComponent implements OnInit {
   
   private searchTerms = new Subject<string>();
 
-  constructor(private heroService: HeroService) { }
+  constructor(public heroService: HeroService) { }
 
   heroes$!: Observable<Hero[]>;
   

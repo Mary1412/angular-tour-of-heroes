@@ -15,6 +15,7 @@ export class HeroService {
 
   private heroesUrl = 'api/heroes';
   data=new Date();
+  public isLoading:BehaviorSubject<boolean>=new BehaviorSubject<boolean>(true);
   
   
 

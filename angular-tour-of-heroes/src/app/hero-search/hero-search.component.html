@@ -9,14 +9,19 @@
         <input  matInput [formControl]='nameControl' placeholder="Hero Search" #searchBox id="search-box" (input)="search(searchBox.value)" />
           </mat-form-field>
   </div> 
-    
+  <div *ngIf="heroService.isLoading | async"><br><br>
+    <mat-progress-bar [mode]="'indeterminate'"></mat-progress-bar>   
+  </div>
     <ul class="search-result">
       <li *ngFor="let hero of heroes$ | async" >
         <a  routerLink="/detail/{{hero.id}}">
-          {{hero.name}}
+          {{hero.name}} 
+                
+
         </a>
       </li>
     </ul>
-  </div>
 
+  
+  </div>
  

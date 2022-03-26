@@ -1,3 +1,4 @@
+import { InterceptorService } from './interceptor.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,7 +13,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { InMemoryDataService } from './in-memory-data.service';
 
 import { HeroSearchComponent } from './hero-search/hero-search.component';
@@ -38,6 +39,8 @@ import { VerificationComponent } from './verification/verification.component';
 import { RepasswordComponent } from './repassword/repassword.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 
 
 
@@ -91,10 +94,11 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     MatInputModule, 
     ReactiveFormsModule,
     MatStepperModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressBarModule
     
   ],
-  providers: [],
+  providers: [ {provide:HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
