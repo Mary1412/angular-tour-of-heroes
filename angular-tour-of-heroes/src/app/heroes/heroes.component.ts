@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from './hero';
 import { HeroService } from '../hero.service';
 import { FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { AddDComponent } from '../add-d/add-d.component';
+import { DeleteDComponent } from '../delete-d/delete-d.component';
 
 
 @Component({
@@ -16,7 +19,7 @@ export class HeroesComponent implements OnInit {
   isActive = false;
   heroes: Hero[]=[];
 
-  constructor( private heroService: HeroService, private MessageService: MessageService) { }
+  constructor( private heroService: HeroService, private MessageService: MessageService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getHeroes();
@@ -29,17 +32,38 @@ getHeroes(): void{
 }
 
 add(name: string): void {
+
+  let dr=this.dialog.open(AddDComponent);
+
+    dr.afterClosed().subscribe(result => {
+      if(result) {
+
   name = name.trim();
   if (!name) { return; }
   this.heroService.addHero({ name } as Hero)
     .subscribe(hero => {
       this.heroes.push(hero);
     });
+    
+  }
+ 
+});
+
+
+
+ 
 }
 
 delete(hero: Hero): void {
+  let dr2=this.dialog.open(DeleteDComponent);
+  dr2.afterClosed().subscribe(result => {
+    if(result) {
+       
   this.heroes = this.heroes.filter(h => h !== hero);
   this.heroService.deleteHero(hero.id,hero.name).subscribe();
+    }
+  })
+ 
 }
 
 }

@@ -40,6 +40,9 @@ import { RepasswordComponent } from './repassword/repassword.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AddDComponent } from './add-d/add-d.component';
+import { DeleteDComponent } from './delete-d/delete-d.component';
 
 
 
@@ -71,6 +74,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     RepasswordComponent,
     UsersComponent,
     UserDetailComponent,
+    AddDComponent,
+    DeleteDComponent,
 
     
 
@@ -95,7 +100,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     ReactiveFormsModule,
     MatStepperModule,
     MatCardModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatDialogModule
     
   ],
   providers: [ {provide:HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}],
