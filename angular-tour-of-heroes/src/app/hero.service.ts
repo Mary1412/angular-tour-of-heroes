@@ -61,6 +61,8 @@ export class HeroService {
     );
   }
 
+  
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -68,15 +70,17 @@ export class HeroService {
 
 
 
-  addHero(hero: Hero): Observable<Hero> {
+ 
+  
+  getHeroes2(): Observable<Hero[]> {
     this.data=new Date();
-    return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions).pipe(
-      tap((newHero: Hero) => this.log(`added hero  id=${newHero.id} name=${newHero.name} `)),
-      catchError(this.handleError<Hero>('addHero'))
-    );
+    return this.http.get<Hero[]>(this.heroesUrl)
+      
   }
 
  
+
+  
 
   deleteHero(id: number, name:string): Observable<Hero> {
     this.data=new Date();
@@ -84,6 +88,14 @@ export class HeroService {
     return this.http.delete<Hero>(url, this.httpOptions).pipe(
       tap(_ => this.log(`deleted hero id=${id} name=${name} `)),
       catchError(this.handleError<Hero>('deleteHero'))
+    );
+  }
+
+  addHero(hero: Hero): Observable<Hero> {
+    this.data=new Date();
+    return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions).pipe(
+      tap((newHero: Hero) => this.log(`added hero  id=${newHero.id} name=${newHero.name} `)),
+      catchError(this.handleError<Hero>('addHero'))
     );
   }
 
@@ -100,7 +112,48 @@ export class HeroService {
     );
   }
 
+
+
+
+  addHero2(hero: Hero): Observable<Hero> {
+
+    this.data=new Date();
+    let a=0;
+    this.http.get<Hero[]>(`${this.heroesUrl}/?name=${hero.name}`).pipe(
+      tap(x => x.length ?
+        a=1 :
+         a=5),
+      catchError(this.handleError<Hero[]>('searchHeroes', []))
+    );
+
+    alert(a);
+
+    return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions).pipe(
+      tap((newHero: Hero) => this.log(`added hero  id=${newHero.id} name=${newHero.name} `)),
+      catchError(this.handleError<Hero>('addHero'))
+    );
+  }
+
+
+
+  addSearchHeroes(term: string): Observable<Hero[]> {
+    if (!term.trim()) {
+       this.http.post<Hero>(this.heroesUrl, term, this.httpOptions).pipe(
+        tap((newHero: Hero) => this.log(`added hero  id=${newHero.id} name=${newHero.name} `)),
+        catchError(this.handleError<Hero>('addHero'))
+      );
+    }
+    this.data=new Date();
+    return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
+      
+    );
+  }
+
   
+
+  
+
+
 
   
 }

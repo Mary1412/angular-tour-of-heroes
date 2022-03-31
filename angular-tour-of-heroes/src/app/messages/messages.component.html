@@ -9,35 +9,23 @@
 
 <h2>Messages</h2>
 
-<div class="row">
-    <div class="input-field col s6">
-        <label class="active" for="first_name">Filter of text</label>
-        <input id="first_name" class="validate" [(ngModel)]="searchStr">
-        
-    </div>
-</div>
-
-<div class="row">
-    <div class="input-field col s6">
-        <label class="active" for="fromd">From</label>
-        <input type="date"  [(ngModel)]="fromd" name="fromd">
-    </div>
-</div>
-
-<div class="row">
-    <div class="input-field col s6">
-        <label class="active" for="rod">to</label>
-        <input type="date"  [(ngModel)]="tod" name="tod">
-    </div>
-</div>
 
 
-
-
-
-
-
-
+<mat-form-field >
+    <mat-label>Filter of text</mat-label>
+    <input matInput id="first_name" class="validate" [(ngModel)]="searchStr"><br> 
+</mat-form-field>
+<br>
+<mat-form-field >
+    <mat-label>From</mat-label>
+    <input type="date" matInput [(ngModel)]="fromd" name="fromd"><br>
+</mat-form-field>
+<br>
+<mat-form-field >
+    <mat-label>to</mat-label>
+    <input type="date" matInput [(ngModel)]="tod" name="tod"><br>
+</mat-form-field>
+<br>
 <button mat-raised-button type="button" class="clear"
     (click)="messageService.clear()">Clear</button>
 

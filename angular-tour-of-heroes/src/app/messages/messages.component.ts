@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges
 import { MessageService } from '../message.service';
 import { Hero } from '../heroes/hero';
 
+
 @Component({
   selector: 'app-messages',
   templateUrl: './messages.component.html',

@@ -16,7 +16,7 @@ export class HeroSearchComponent implements OnInit {
   isActive = false;
 
   
-  private searchTerms = new Subject<string>();
+  public searchTerms = new Subject<string>();
 
   constructor(public heroService: HeroService) { }
 

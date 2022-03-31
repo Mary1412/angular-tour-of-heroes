@@ -10,7 +10,7 @@
         <br>
         <mat-form-field appearance="fill">
             <mat-label> Enter password</mat-label>
-            <input matInput placeholder="password" [formControl]="pas1FormControl"required><br>
+            <input type="password" matInput placeholder="password" [formControl]="pas1FormControl"required><br>
             <mat-error *ngIf=" !pas1FormControl.hasError('required')">
                 It is not empty
               </mat-error> </mat-form-field>

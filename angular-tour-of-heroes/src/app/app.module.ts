@@ -24,6 +24,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 
+
 import {  MatStepperModule } from "@angular/material/stepper";
 import { FirstCompComponent } from './first-comp/first-comp.component';
 import { SearchPipe } from './messages/search.pipe';
@@ -43,8 +44,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 import { AddDComponent } from './add-d/add-d.component';
 import { DeleteDComponent } from './delete-d/delete-d.component';
-
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 
@@ -75,14 +75,10 @@ import { DeleteDComponent } from './delete-d/delete-d.component';
     UsersComponent,
     UserDetailComponent,
     AddDComponent,
-    DeleteDComponent,
-
-    
-
- 
-    
+    DeleteDComponent 
 
   ],
+  entryComponents:[AddDComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -101,7 +97,8 @@ import { DeleteDComponent } from './delete-d/delete-d.component';
     MatStepperModule,
     MatCardModule,
     MatProgressBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDatepickerModule
     
   ],
   providers: [ {provide:HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}],
