@@ -12,6 +12,7 @@ import { FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { AddDComponent } from '../add-d/add-d.component';
 import { DeleteDComponent } from '../delete-d/delete-d.component';
+import { ExistDComponent } from '../exist-d/exist-d.component';
 
 
 
@@ -41,12 +42,6 @@ export class HeroesComponent implements OnInit {
   
   ngOnInit(): void {
     this.getHeroes();
-
-    this.heroes2$ = this.searchTerms2.pipe(
-      debounceTime(300),
-      distinctUntilChanged(),
-      switchMap((term: string) => this.heroService.addSearchHeroes(term)),
-      );
   }
 
 
@@ -68,6 +63,20 @@ add(name: string): void {
 
 let name2 = name;
 
+
+let b =4;
+for( let i=0; i<this.heroes.length; i++){
+ if (this.heroes[i].name==name){
+    b=2;
+    break;
+  }
+  else{
+    b=3;
+  }
+ 
+}
+
+if (b==3){
   let dr=this.dialog.open(AddDComponent);
     dr.afterClosed().subscribe(result => {
       if(result) {
@@ -82,6 +91,14 @@ this.heroService.addHero2({ name } as Hero)
   }
  
 });
+}
+else{
+ 
+  let dr2=this.dialog.open(ExistDComponent);
+}
+
+
+
 
 }
 

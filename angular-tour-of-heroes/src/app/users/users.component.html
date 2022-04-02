@@ -9,13 +9,13 @@
     <mat-form-field>
       <input matInput placeholder="Name" class="aaa" [formControl]='nameControl' id="new-hero" #userName>
   </mat-form-field>
-   
+   <br>
   <mat-form-field>
     <input matInput placeholder="Surname" class="aaa" [formControl]='nameControl' id="new-hero" #userSuname>
 </mat-form-field>
 
     <button mat-raised-button  type="button" class="add-button" (click)="add(userName.value, userSuname.value); userName.value=''; userSuname.value=''">
-      Add hero
+      Add user
     </button>
   </div>
 

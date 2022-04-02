@@ -45,6 +45,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { AddDComponent } from './add-d/add-d.component';
 import { DeleteDComponent } from './delete-d/delete-d.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { ExistDComponent } from './exist-d/exist-d.component';
 
 
 
@@ -75,7 +76,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     UsersComponent,
     UserDetailComponent,
     AddDComponent,
-    DeleteDComponent 
+    DeleteDComponent,
+    ExistDComponent 
 
   ],
   entryComponents:[AddDComponent],

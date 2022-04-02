@@ -117,38 +117,19 @@ export class HeroService {
 
   addHero2(hero: Hero): Observable<Hero> {
 
+      
     this.data=new Date();
-    let a=0;
-    this.http.get<Hero[]>(`${this.heroesUrl}/?name=${hero.name}`).pipe(
-      tap(x => x.length ?
-        a=1 :
-         a=5),
-      catchError(this.handleError<Hero[]>('searchHeroes', []))
-    );
-
-    alert(a);
-
     return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions).pipe(
       tap((newHero: Hero) => this.log(`added hero  id=${newHero.id} name=${newHero.name} `)),
       catchError(this.handleError<Hero>('addHero'))
     );
+       
+    
   }
 
 
 
-  addSearchHeroes(term: string): Observable<Hero[]> {
-    if (!term.trim()) {
-       this.http.post<Hero>(this.heroesUrl, term, this.httpOptions).pipe(
-        tap((newHero: Hero) => this.log(`added hero  id=${newHero.id} name=${newHero.name} `)),
-        catchError(this.handleError<Hero>('addHero'))
-      );
-    }
-    this.data=new Date();
-    return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
-      
-    );
-  }
-
+ 
   
 
   

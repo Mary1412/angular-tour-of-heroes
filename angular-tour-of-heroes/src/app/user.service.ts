@@ -29,6 +29,13 @@ export class UserService {
     }
    
 
+    private handleError<T>(operation = 'operation', result?: T) {
+      return (error: any): Observable<T> => {
+        console.error(error);
+        this.log(`${operation} failed: ${error.message}`);
+        return of(result as T);
+      };
+    }
 
 
   httpOptions = {
@@ -40,7 +47,7 @@ export class UserService {
     return this.http.get<User[]>(this.usersUrl)
       .pipe(
         tap(_ => this.log('fetched users')),
-        
+        catchError(this.handleError<User[]>('getUsers', []))
       );
   }
 
@@ -48,7 +55,7 @@ export class UserService {
     const url = `${this.usersUrl}/${id}`;
     return this.http.get<User>(url).pipe(
       tap(_ => this.log(`fetched user id=${id} name=${name} surname=${surname}  `)),
-      
+      catchError(this.handleError<User>(`getUser id=${id} name=${name} surname=${surname} `))
     );
   }
 
@@ -56,8 +63,8 @@ export class UserService {
   addUser(user: User): Observable<User> {
     this.data=new Date();
     return this.http.post<User>(this.usersUrl, user, this.httpOptions).pipe(
-      tap((newUser: User) => this.log(`added users  id=${newUser.id} name=${newUser.name}  name=${newUser.surname}`))
-     
+      tap((newUser: User) => this.log(`added users  id=${newUser.id} name=${newUser.name}  name=${newUser.surname}`)),
+      catchError(this.handleError<User>('addUser'))
     );
   }
 
@@ -65,7 +72,7 @@ export class UserService {
   updateUser(user: User): Observable<any> {
     return this.http.put(this.usersUrl, user, this.httpOptions).pipe(
       tap(_ => this.log(`updated user id=${user.id} name=${user.name}  name=${user.surname} `)),
-      
+      catchError(this.handleError<any>('updateUser'))
     );
   }
 
@@ -74,7 +81,7 @@ export class UserService {
     const url = `${this.usersUrl}/${id}`;
     return this.http.delete<User>(url, this.httpOptions).pipe(
       tap(_ => this.log(`deleted user id=${id} name=${name} surname=${surname} `)),
-      
+      catchError(this.handleError<User>('deleteUser'))
     );
   }
  
