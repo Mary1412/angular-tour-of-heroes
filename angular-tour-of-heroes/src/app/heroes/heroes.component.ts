@@ -63,12 +63,14 @@ add(name: string): void {
 
 let name2 = name;
 
-
 let b =4;
 for( let i=0; i<this.heroes.length; i++){
- if (this.heroes[i].name==name){
+ if (this.heroes[i].name==name ){
     b=2;
     break;
+  }
+  else if(name==""){
+    b=4;
   }
   else{
     b=3;
@@ -76,13 +78,14 @@ for( let i=0; i<this.heroes.length; i++){
  
 }
 
-if (b==3){
+if (b==3 ){
   let dr=this.dialog.open(AddDComponent);
     dr.afterClosed().subscribe(result => {
       if(result) {
+      
 this.heroService.addHero2({ name } as Hero)
     .subscribe(hero => {
-      if(name2 == hero.name){
+      if(name == hero.name){
                 this.heroes.push(hero);
       }
       
@@ -92,15 +95,13 @@ this.heroService.addHero2({ name } as Hero)
  
 });
 }
-else{
+else if (b==2){
  
   let dr2=this.dialog.open(ExistDComponent);
 }
 
-
-
-
 }
+
 
 
 

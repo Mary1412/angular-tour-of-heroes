@@ -45,7 +45,7 @@
 </div>
 
 <ul class="heroes">
-  <li *ngFor="let hero of heroes">
+  <li *ngFor="let hero of heroes | slice:1">
     <a routerLink="/detail/{{hero.id}}/{{hero.name}}">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </a>
