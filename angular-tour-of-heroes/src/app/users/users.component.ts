@@ -5,8 +5,9 @@ import { USERS } from '../mock-users';
 import { User } from './user';
 import { UserService } from '../user.service';
 import { MatDialog } from '@angular/material/dialog';
-import { AddDComponent } from '../add-d/add-d.component';
-import { DeleteDComponent } from '../delete-d/delete-d.component';
+import { DialogForAddingComponent } from '../dialog-for-adding/dialog-for-adding.component';
+
+import { DialogForDeletingComponent } from '../dialog-for-deleting/dialog-for-deleting.component';
 
 
 @Component({
@@ -41,7 +42,7 @@ export class UsersComponent implements OnInit {
 
 
   add(name: string, surname: string): void {
-    let dr=this.dialog.open(AddDComponent);
+    let dr=this.dialog.open(DialogForAddingComponent);
 
     dr.afterClosed().subscribe(result => {
       if(result) {
@@ -63,7 +64,7 @@ export class UsersComponent implements OnInit {
   }
 
   delete(user: User): void {
-    let dr2=this.dialog.open(DeleteDComponent);
+    let dr2=this.dialog.open( DialogForDeletingComponent );
   dr2.afterClosed().subscribe(result => {
     if(result) {
     this.users = this.users.filter(u => u !== user);

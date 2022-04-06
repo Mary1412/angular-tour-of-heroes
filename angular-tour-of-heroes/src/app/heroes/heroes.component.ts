@@ -10,9 +10,12 @@ import { Hero } from './hero';
 import { HeroService } from '../hero.service';
 import { FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { AddDComponent } from '../add-d/add-d.component';
-import { DeleteDComponent } from '../delete-d/delete-d.component';
-import { ExistDComponent } from '../exist-d/exist-d.component';
+
+
+
+import { DialogForAddingComponent } from '../dialog-for-adding/dialog-for-adding.component';
+import { DialogForDeletingComponent } from '../dialog-for-deleting/dialog-for-deleting.component';
+import { DialogForExistingComponent } from '../dialog-for-existing/dialog-for-existing.component';
 
 
 
@@ -79,7 +82,7 @@ for( let i=0; i<this.heroes.length; i++){
 }
 
 if (b==3 ){
-  let dr=this.dialog.open(AddDComponent);
+  let dr=this.dialog.open(DialogForAddingComponent);
     dr.afterClosed().subscribe(result => {
       if(result) {
       
@@ -97,7 +100,7 @@ this.heroService.addHero2({ name } as Hero)
 }
 else if (b==2){
  
-  let dr2=this.dialog.open(ExistDComponent);
+  let dr2=this.dialog.open(DialogForExistingComponent);
 }
 
 }
@@ -109,7 +112,7 @@ else if (b==2){
 
 
 delete(hero: Hero): void {
-  let dr2=this.dialog.open(DeleteDComponent);
+  let dr2=this.dialog.open(DialogForDeletingComponent);
   dr2.afterClosed().subscribe(result => {
     if(result) {
        

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeleteDComponent } from './delete-d.component';
+import { DialogForExistingComponent } from './dialog-for-existing.component';
 
-describe('DeleteDComponent', () => {
-  let component: DeleteDComponent;
-  let fixture: ComponentFixture<DeleteDComponent>;
+describe('DialogForExistingComponent', () => {
+  let component: DialogForExistingComponent;
+  let fixture: ComponentFixture<DialogForExistingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeleteDComponent ]
+      declarations: [ DialogForExistingComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeleteDComponent);
+    fixture = TestBed.createComponent(DialogForExistingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

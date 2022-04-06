@@ -42,10 +42,13 @@ import { UsersComponent } from './users/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatDialogModule} from '@angular/material/dialog';
-import { AddDComponent } from './add-d/add-d.component';
-import { DeleteDComponent } from './delete-d/delete-d.component';
+
+
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import { ExistDComponent } from './exist-d/exist-d.component';
+
+import { DialogForAddingComponent } from './dialog-for-adding/dialog-for-adding.component';
+import { DialogForDeletingComponent } from './dialog-for-deleting/dialog-for-deleting.component';
+import { DialogForExistingComponent } from './dialog-for-existing/dialog-for-existing.component';
 
 
 
@@ -75,12 +78,12 @@ import { ExistDComponent } from './exist-d/exist-d.component';
     RepasswordComponent,
     UsersComponent,
     UserDetailComponent,
-    AddDComponent,
-    DeleteDComponent,
-    ExistDComponent 
+    DialogForAddingComponent,
+    DialogForDeletingComponent,
+    DialogForExistingComponent 
 
   ],
-  entryComponents:[AddDComponent],
+  entryComponents:[DialogForAddingComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
