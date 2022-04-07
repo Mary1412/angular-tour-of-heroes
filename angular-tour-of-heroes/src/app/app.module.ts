@@ -5,10 +5,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
+
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
@@ -16,7 +16,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { InMemoryDataService } from './in-memory-data.service';
 
-import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { HeroSearchComponent } from './hero-module/hero-search/hero-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSliderModule } from '@angular/material/slider';
@@ -26,7 +26,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 
 
 import {  MatStepperModule } from "@angular/material/stepper";
-import { FirstCompComponent } from './first-comp/first-comp.component';
+import { FirstCompComponent } from './hero-module/first-comp/first-comp.component';
 import { SearchPipe } from './messages/search.pipe';
 
 
@@ -49,6 +49,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { DialogForAddingComponent } from './dialog-for-adding/dialog-for-adding.component';
 import { DialogForDeletingComponent } from './dialog-for-deleting/dialog-for-deleting.component';
 import { DialogForExistingComponent } from './dialog-for-existing/dialog-for-existing.component';
+import { HeroesComponent } from './hero-module/heroes/heroes.component';
+import { HeroDetailComponent } from './hero-module/hero-detail/hero-detail.component';
 
 
 

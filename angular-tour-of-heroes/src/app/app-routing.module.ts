@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeroesComponent } from './heroes/heroes.component';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+
 import { MessagesComponent } from './messages/messages.component';
-import { FirstCompComponent } from './first-comp/first-comp.component';
+import { FirstCompComponent } from './hero-module/first-comp/first-comp.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { VerificationComponent } from './verification/verification.component';
@@ -12,6 +12,8 @@ import { RepasswordComponent } from './repassword/repassword.component';
 import { AuthGuard } from './auth.guard';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UsersComponent } from './users/users.component';
+import { HeroesComponent } from './hero-module/heroes/heroes.component';
+import { HeroDetailComponent } from './hero-module/hero-detail/hero-detail.component';
 
 const routes: Routes = [
   { path: 'heroes', component:HeroesComponent},

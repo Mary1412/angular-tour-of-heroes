@@ -1,21 +1,21 @@
 
 import { debounceTime, distinctUntilChanged, Observable, Subject, switchMap } from 'rxjs';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './../in-memory-data.service';
+import { InMemoryDataService } from './.././../in-memory-data.service';
 
-import { HEROES } from './../mock-heroes';
-import { MessageService } from './../message.service';
+import { HEROES } from './.././../mock-heroes';
+import { MessageService } from './.././../message.service';
 import { Component, OnInit } from '@angular/core';
 import { Hero } from './hero';
-import { HeroService } from '../hero.service';
+import { HeroService } from './../../hero.service';
 import { FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 
 
 
-import { DialogForAddingComponent } from '../dialog-for-adding/dialog-for-adding.component';
-import { DialogForDeletingComponent } from '../dialog-for-deleting/dialog-for-deleting.component';
-import { DialogForExistingComponent } from '../dialog-for-existing/dialog-for-existing.component';
+import { DialogForAddingComponent } from './../../dialog-for-adding/dialog-for-adding.component';
+import { DialogForDeletingComponent } from './../../dialog-for-deleting/dialog-for-deleting.component';
+import { DialogForExistingComponent } from './../../dialog-for-existing/dialog-for-existing.component';
 
 
 
