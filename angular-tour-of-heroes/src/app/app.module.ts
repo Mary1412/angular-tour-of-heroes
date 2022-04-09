@@ -50,7 +50,8 @@ import { DialogForAddingComponent } from './dialog-for-adding/dialog-for-adding.
 import { DialogForDeletingComponent } from './dialog-for-deleting/dialog-for-deleting.component';
 import { DialogForExistingComponent } from './dialog-for-existing/dialog-for-existing.component';
 import { HeroesComponent } from './hero-module/heroes/heroes.component';
-import { HeroDetailComponent } from './hero-module/hero-detail/hero-detail.component';
+
+import { ParamsModel } from './hero.service';
 
 
 
@@ -67,7 +68,7 @@ import { HeroDetailComponent } from './hero-module/hero-detail/hero-detail.compo
   declarations: [
     AppComponent,
     HeroesComponent,
-    HeroDetailComponent,
+    
     MessagesComponent,
     DashboardComponent,
     HeroSearchComponent,

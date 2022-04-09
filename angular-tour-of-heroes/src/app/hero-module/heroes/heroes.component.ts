@@ -1,3 +1,4 @@
+'use strict';
 
 import { debounceTime, distinctUntilChanged, Observable, Subject, switchMap } from 'rxjs';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
@@ -18,6 +19,10 @@ import { DialogForDeletingComponent } from './../../dialog-for-deleting/dialog-f
 import { DialogForExistingComponent } from './../../dialog-for-existing/dialog-for-existing.component';
 
 
+import {sep} from '../../globals'; 
+import { GlobVarService } from 'src/app/glob-var.service';
+
+
 
 
 @Component({
@@ -25,6 +30,9 @@ import { DialogForExistingComponent } from './../../dialog-for-existing/dialog-f
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css']
 })
+
+
+
 export class HeroesComponent implements OnInit {
   
   nameControl: FormControl = new FormControl;
@@ -32,20 +40,51 @@ export class HeroesComponent implements OnInit {
   heroes: Hero[]=[];
   searchTerms: any;
   heroes2$!: Observable<Hero[]>;
-    
+
+
   public searchTerms2 = new Subject<string>();
   
   
 
+ 
 
 
-  constructor( private heroService: HeroService, private MessageService: MessageService, public dialog: MatDialog) { }
+  constructor( private heroService: HeroService, private MessageService: MessageService, public dialog: MatDialog,
+    private globVarService:GlobVarService) { }
 
   
   
   ngOnInit(): void {
     this.getHeroes();
   }
+
+ public helloString: string= "";
+
+  readValue() {
+    this.helloString = this.globVarService.globalVar;
+   
+  }
+ 
+
+ch:number=0;
+
+  nv:string="";
+
+  show(){
+this.ch=1;
+  }
+
+  closseE(){
+    this.ch=0;
+  }
+
+
+  edit( g:string):void{
+    //let dr3=this.dialog.open(HeroDetailComponent);
+    this.nv=g;
+  }
+
+ 
 
 
 getHeroes(): void{

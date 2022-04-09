@@ -1,7 +1,8 @@
 import { HeroService } from './../hero.service';
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../heroes/hero';
+
 import { FormControl } from '@angular/forms';
+import { Hero } from '../hero-module/heroes/hero';
 
 @Component({
   selector: 'app-dashboard',

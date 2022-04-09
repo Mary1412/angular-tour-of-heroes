@@ -44,15 +44,34 @@
   </button>
 </div>
 
+
+<button mat-raised-button color="primary"   type="button" (click)="show()">edit</button>
+<div *ngIf="ch==1">
+<button  mat-raised-button (click)="closseE()">Ok</button>
+</div>
 <ul class="heroes">
+ 
+
   <li *ngFor="let hero of heroes | slice:1">
-    <a routerLink="/detail/{{hero.id}}/{{hero.name}}">
+    <a  >
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </a>
+    
     <button mat-raised-button  type="button" class="delete" title="delete hero"
       (click)="delete(hero)">x</button>
+     
+
+      
+      <div id="popup" class="popup" *ngIf="ch==1" >
+        
+      <input [(ngModel)]="hero.name" class="popup_content" placeholder="name">
+
+
+    </div>
   </li>
 </ul>
+
+
 
 
 

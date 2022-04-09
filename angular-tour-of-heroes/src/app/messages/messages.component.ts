@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { MessageService } from '../message.service';
-import { Hero } from '../heroes/hero';
+
 
 
 @Component({
