@@ -52,6 +52,7 @@ import { DialogForExistingComponent } from './dialog-for-existing/dialog-for-exi
 import { HeroesComponent } from './hero-module/heroes/heroes.component';
 
 import { ParamsModel } from './hero.service';
+import { AuthComponent } from './auth/auth.component';
 
 
 
@@ -83,7 +84,8 @@ import { ParamsModel } from './hero.service';
     UserDetailComponent,
     DialogForAddingComponent,
     DialogForDeletingComponent,
-    DialogForExistingComponent 
+    DialogForExistingComponent,
+    AuthComponent 
 
   ],
   entryComponents:[DialogForAddingComponent],

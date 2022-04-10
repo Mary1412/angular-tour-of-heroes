@@ -18,7 +18,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   }
 
   
- 
+ fieldset{
+   border: none;
+ }
 
   *{
     font-family: Arial, Helvetica, sans-serif;

@@ -13,6 +13,7 @@ import { AuthGuard } from './auth.guard';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UsersComponent } from './users/users.component';
 import { HeroesComponent } from './hero-module/heroes/heroes.component';
+import { AuthComponent } from './auth/auth.component';
 
 
 const routes: Routes = [
@@ -24,7 +25,7 @@ const routes: Routes = [
   { path: 'message', component:MessagesComponent},
   { path: 'first2', component:FirstCompComponent, canActivate: [AuthGuard]},
   { path: 'first', component:FirstCompComponent},
-  { path: 'login', component:LoginComponent},
+  { path: 'login', component:AuthComponent},
   { path: 'signup', component:SignupComponent},
   { path: 'verification', component:VerificationComponent},
   { path: 'repass', component:RepasswordComponent},

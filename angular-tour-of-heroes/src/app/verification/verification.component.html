@@ -1,22 +1,26 @@
 <mat-card [class.mat-elevation-z8]="isActive">
     <mat-card-title  >Verification of user</mat-card-title>
+
+    <fieldset [formGroup]="verControl">
         <mat-form-field appearance="fill">
             <mat-label>login</mat-label>
-        <input matInput placeholder="login" [formControl]="loginFormControl" required><br>
-        <mat-error *ngIf="!loginFormControl.hasError('required') && !loginFormControl.hasError('pattern') ">
+        <input matInput placeholder="login" formControlName="loginFormControl" required><br>
+        <mat-error *ngIf="!verControl">
             only letters, digits
           </mat-error>
     </mat-form-field>
         <br>
         <mat-form-field appearance="fill">
             <mat-label>secreat word</mat-label>
-        <input matInput placeholder="login" [formControl]="loginFormControl" required><br>
-        <mat-error *ngIf="!swFormControl.hasError('required')  ">
+        <input matInput placeholder="login" formControlName="swFormControl" required><br>
+        <mat-error *ngIf="!verControl  ">
             required
           </mat-error>
     </mat-form-field>
         <br>
-        <a mat-raised-button routerLink="/login">Back</a>
-       <a mat-raised-button routerLink="/repass">Next</a><br><br>
+        <a mat-raised-button (click)="movep()" >Back</a>
+       <a mat-raised-button (click)="movep2()">Next</a><br><br>
+
+    </fieldset>
   </mat-card>
 

@@ -1,24 +1,31 @@
 <mat-card [class.mat-elevation-z8]="isActive">
     <mat-card-title  >Login</mat-card-title>
+
+    <fieldset [formGroup]="logControl">
+
     <mat-form-field appearance="fill">
         <mat-label>login</mat-label>
-        <input matInput placeholder="login" [formControl]="loginFormControl" required><br>
-        <mat-error *ngIf="!loginFormControl.hasError('required')">
+        <input matInput placeholder="login" formControlName="loginFormControl" required><br>
+        <mat-error *ngIf="!logControl">
             only letters, digits
           </mat-error>
     </mat-form-field>
         <br>
         <mat-form-field appearance="fill">
             <mat-label> Enter password</mat-label>
-            <input type="password" matInput placeholder="password" [formControl]="pas1FormControl"required><br>
-            <mat-error *ngIf=" !pas1FormControl.hasError('required')">
+            <input type="password" matInput placeholder="password" formControlName="pas1FormControl"required><br>
+            <mat-error *ngIf=" !logControl">
                 It is not empty
               </mat-error> </mat-form-field>
         <br>
-       <button mat-raised-button color="primary" *ngIf="!pas1FormControl.hasError('required') && !loginFormControl.hasError('required')" routerLink="/first2">Login</button>
-       <a mat-raised-button routerLink="/signup" >Sign up</a><br><br>
-       <a class="linkpas" routerLink="/verification">Forgot your password?</a>
+       <button mat-raised-button color="primary" *ngIf="logControl.valid" routerLink="/first2">Login</button>
+       <a mat-raised-button routerLink="/signup9" (click)="movep()" >Sign up</a><br><br>
+       <a class="linkpas" (click)="movep2()">Forgot your password?</a>
+
+       </fieldset>
   </mat-card>
+
+ 
 
   <router-outlet></router-outlet>
 

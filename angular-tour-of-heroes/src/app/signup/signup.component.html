@@ -1,50 +1,55 @@
+
+
+
 <mat-card [class.mat-elevation-z8]="isActive">
     <mat-card-title  >Sign Up</mat-card-title>
+
+    <fieldset [formGroup]=" signupControl">
     <mat-form-field appearance="fill">
         <mat-label>Name</mat-label>
-        <input matInput placeholder="name"  required [formControl]="nameFormControl" [errorStateMatcher]="matcher"><br>
-        <mat-error *ngIf="!nameFormControl.hasError('required')">
+        <input matInput placeholder="name"  required formControlName="nameFormControl" [errorStateMatcher]="matcher"><br>
+        <mat-error *ngIf="!signupControl">
             only letters, digits
           </mat-error>
     </mat-form-field>
     <br>
     <mat-form-field appearance="fill">
         <mat-label>Surname</mat-label>
-        <input matInput placeholder="surname"  [formControl]="surnameFormControl" required><br>
-        <mat-error *ngIf="!surnameFormControl.hasError('required')">
+        <input matInput placeholder="surname"  formControlName="surnameFormControl" required><br>
+        <mat-error *ngIf="!signupControl">
             only letters, digits
           </mat-error>
     </mat-form-field>
     <br>
         <mat-form-field appearance="fill">
             <mat-label>login</mat-label>
-            <input matInput placeholder="login" [formControl]="loginFormControl" required><br>
-            <mat-error *ngIf="!loginFormControl.hasError('required')">
+            <input matInput placeholder="login" formControlName="loginFormControl" required><br>
+            <mat-error *ngIf="!signupControl">
                 only letters, digits
               </mat-error>
         </mat-form-field>
         <br>
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Email</mat-label>
-            <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+            <input type="email" matInput formControlName="emailFormControl" [errorStateMatcher]="matcher"
                    placeholder="email@email.com">
-            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            <mat-error *ngIf="!signupControl">
               Please enter a valid email address
             </mat-error>
-          </mat-form-field>
+          </mat-form-field>`
         <br>
         <mat-form-field appearance="fill">
             <mat-label> password</mat-label>
-            <input matInput placeholder="password" [formControl]="pas1FormControl" [errorStateMatcher]="matcher"  required><br>
-            <mat-error *ngIf=" !pas1FormControl.hasError('required')">
+            <input matInput placeholder="password" formControlName="pas1FormControl" [errorStateMatcher]="matcher"  required><br>
+            <mat-error *ngIf=" !signupControl">
                 It is not empty
               </mat-error>
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill">
             <mat-label> password second time</mat-label>
-            <input matInput placeholder="password" [formControl]="pas2FormControl" [errorStateMatcher]="matcher"  required><br>
-            <mat-error *ngIf=" !pas2FormControl.hasError('required')">
+            <input matInput placeholder="password" formControlName="pas2FormControl" [errorStateMatcher]="matcher"  required><br>
+            <mat-error *ngIf="!signupControl">
                 It is not empty
               </mat-error>
         </mat-form-field>
@@ -54,14 +59,12 @@
             <input matInput placeholder="secret word"><br>
         </mat-form-field>
         <br>
-       <button mat-raised-button color="primary" *ngIf="!nameFormControl.hasError('required') && !nameFormControl.hasError('pattern') 
-                                                        && !surnameFormControl.hasError('required') && !surnameFormControl.hasError('pattern') 
-                                                        && !loginFormControl.hasError('required') && !loginFormControl.hasError('pattern') 
-                                                        && !emailFormControl.hasError('email') && !emailFormControl.hasError('required')
-                                                        && !pas1FormControl.hasError('required') && !pas2FormControl.hasError('required')
 
-       
-       "routerLink="/login">Sign up</button>
-       <a mat-raised-button href="#" routerLink="/login">Login</a><br><br>
+
+      </fieldset>
+
+       <button mat-raised-button color="primary" *ngIf="!signupControl.valid" (click)="movep()">Sign up</button>
+      
+       <a mat-raised-button href="#" (click)="movep()">Login</a><br><br>
   </mat-card>
 

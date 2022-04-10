@@ -67,6 +67,11 @@ export class HeroesComponent implements OnInit {
  
 
 ch:number=0;
+o:number=1;
+
+addO(){
+this.o=0
+}
 
   nv:string="";
 
@@ -102,6 +107,7 @@ search2(name: string): void {
 }
 
 add(name: string): void {
+  this.o=1;
 
 let name2 = name;
 

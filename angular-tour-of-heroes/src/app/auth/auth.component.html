@@ -1,0 +1,18 @@
+
+
+
+<div *ngIf="l==1">
+<app-login  (ll)="l=$event" (ss)="s=$event" (rr)="r=$event" (vv)="v=$event" ></app-login>
+</div>
+
+<div *ngIf="s==1" >
+<app-signup (ll)="l=$event" (ss)="s=$event" (rr)="r=$event" (vv)="v=$event"></app-signup>
+</div>
+
+<div *ngIf="r==1">
+<app-repassword (ll)="l=$event" (ss)="s=$event" (rr)="r=$event" (vv)="v=$event"></app-repassword>
+</div>
+
+<div *ngIf="v==1">
+<app-verification (ll)="l=$event" (ss)="s=$event" (rr)="r=$event" (vv)="v=$event" ></app-verification>
+</div>
