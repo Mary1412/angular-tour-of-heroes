@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 
 import { FirstCompComponent } from './first-comp/first-comp.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+
 import { HeroesComponent } from './heroes/heroes.component';
 
 
@@ -13,7 +13,7 @@ import { HeroesComponent } from './heroes/heroes.component';
   declarations: [
     HeroesComponent,
     HeroSearchComponent,
-    HeroDetailComponent,
+   
     FirstCompComponent 
   ],
   imports: [

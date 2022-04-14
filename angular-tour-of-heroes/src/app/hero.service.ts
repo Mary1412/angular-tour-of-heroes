@@ -14,7 +14,7 @@ import { Hero } from './hero-module/heroes/hero';
 
 export class HeroService {
 
-  private heroesUrl = 'api/heroes';
+  private heroesUrl = 'http://localhost:3000/heroes';
   data=new Date();
   public isLoading:BehaviorSubject<boolean>=new BehaviorSubject<boolean>(true);
   
@@ -28,7 +28,17 @@ export class HeroService {
       this.data=new Date();
       this.messageService.add(`HeroService: ${message} ${this.data} `  );
     }
+
+    getData():Observable<any>{
+
+      const url ="https://jsonplaceholder.typicode.com/posts";
+
+      return this.http.get<any>(url)
+
+    }
    
+
+
 
     getHeroes(): Observable<Hero[]> {
       this.data=new Date();

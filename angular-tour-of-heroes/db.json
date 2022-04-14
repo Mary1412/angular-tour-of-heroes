@@ -10,7 +10,7 @@
      { "id": 17, "name": "H7 " },
      { "id": 18, "name": "H8 " },
      { "id": 19, "name": "H9 " },
-     { "id": 20, "name": "H10 " }
+     { "id": 20, "name": "cat " }
     ],
     "users": [
       { "id": 1, "name": "User1", "surname": "U1" },
@@ -22,7 +22,7 @@
       { "id": 7, "name": "User7", "surname": "U7" },
       { "id": 8, "name": "User8", "surname": "U8" },
       { "id": 9, "name": "User9", "surname": "U9" },
-      { "id": 10, "name": "User10", "surname": "U10" }
+      { "id": 10, "name": "cat", "surname": "U10" }
     ]
     
   }

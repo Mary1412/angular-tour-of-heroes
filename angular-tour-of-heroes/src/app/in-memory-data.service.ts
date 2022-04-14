@@ -9,7 +9,7 @@ import { Hero } from './hero-module/heroes/hero';
 })
 export class InMemoryDataService implements InMemoryDbService {
   createDb(){
-    const heroes = [
+    const heroes11 = [
       { id: 11, name: ' ' },
       { id: 11, name: 'H1' },
       { id: 12, name: 'H2' },
@@ -34,13 +34,13 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 9, name: 'User9', surname:'U9' },
       { id: 10, name: 'User10', surname:'U10' }
     ];
-    return {heroes, users};
+    return {heroes11, users};
   }
 
   
 
-  getId(heroes: Hero[]): number {
-    return heroes.length > 0 ? Math.max(...heroes.map(hero => hero.id))+1:11;
+  getId(heroes11: Hero[]): number {
+    return heroes11.length > 0 ? Math.max(...heroes11.map(hero => hero.id))+1:11;
   }
 
   getId2(users: User[]): number {

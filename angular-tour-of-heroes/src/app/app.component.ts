@@ -1,5 +1,9 @@
+import { NewservService } from './newserv.service';
+import { HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-root',
@@ -13,6 +17,7 @@ export class AppComponent implements OnInit {
 
 
 
+constructor(private newservService: NewservService){}
   
 
   data=new Date();
@@ -21,7 +26,17 @@ export class AppComponent implements OnInit {
   }
 
 
+  gdfa(){
+    this.newservService.getData().subscribe((data: any)=>{
+      console.log(data);
+      
+    })
+    /*fetch('http://localhost:3000/heroes')
+  .then((response) => response.json())
+  .then((json) => console.log(json));*/
   
+
+  }
 
 
   ngOnInit(){
