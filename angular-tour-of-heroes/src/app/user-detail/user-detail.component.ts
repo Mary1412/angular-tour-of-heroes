@@ -30,6 +30,12 @@ export class UserDetailComponent implements OnInit {
     this.getUser();
   }
 
+  s=0;
+  setting(){
+    this.s=1;
+
+  }
+
   getUser(): void{
     const id = Number(this.route.snapshot.paramMap.get('id'));
     const name = String(this.route.snapshot.paramMap.get('name'));
@@ -40,13 +46,15 @@ export class UserDetailComponent implements OnInit {
 
   goBack(): void{
     this.location.back();
+    
   }
   
   save(): void {
     if (this.user) {
       this.userService.updateUser(this.user)
-        .subscribe(() => this.goBack());
+        .subscribe();
     }
+    this.s=0;
   }
 
 }

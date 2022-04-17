@@ -5,20 +5,34 @@
 
 <div *ngIf="user">
 
+    <br>
+<br>
 
+    <img src="https://i.pinimg.com/originals/ba/66/02/ba6602a51ea3490764cb1e03ea28fae8.jpg" alt="Avatar" class="avatar">
     
-    <h2>{{ user.name  | uppercase}} {{ user.surname  | uppercase}} Users</h2>
+    <h2>{{ user.name  | uppercase}} <br>{{ user.surname  | uppercase}} </h2>
+    
+    <button mat-raised-button type="button" (click)="setting()">
+        Setting
+    </button>
+
+    <div *ngIf="s==1">
+
     <div><span>id: </span>{{user.id}}</div>
     <div>
-        <label for="hero-name">User name: </label>
-        <input [formControl]='nameControl' id="user-name" [(ngModel)]="user.name" placeholder="name">
+        <mat-form-field>
+        <mat-label for="hero-name">User name: </mat-label>
+        <input matInput [formControl]='nameControl' id="user-name" [(ngModel)]="user.name" placeholder="name">
+    </mat-form-field>
     </div>
     <div>
-        <label for="hero-surname">User surname: </label>
-        <input [formControl]='nameControl2' id="user-surname" [(ngModel)]="user.surname" placeholder="surname">
-        
+    <mat-form-field>
+        <mat-label for="hero-surname">User surname: </mat-label>
+        <input matInput [formControl]='nameControl2' id="user-surname" [(ngModel)]="user.surname" placeholder="surname">
+    </mat-form-field> 
     </div>
+    
+    <button mat-raised-button  type="button" (click)="save()">save</button></div>
     <button mat-raised-button type="button" (click)="goBack()">go back</button>
-    <button mat-raised-button  type="button" (click)="save()">save</button>
 
 </div>
