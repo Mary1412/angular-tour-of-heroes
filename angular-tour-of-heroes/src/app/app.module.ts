@@ -53,6 +53,7 @@ import { HeroesComponent } from './hero-module/heroes/heroes.component';
 
 import { ParamsModel } from './hero.service';
 import { AuthComponent } from './auth/auth.component';
+import { GetRequestComponent } from './get-request.component';
 
 
 
@@ -85,7 +86,8 @@ import { AuthComponent } from './auth/auth.component';
     DialogForAddingComponent,
     DialogForDeletingComponent,
     DialogForExistingComponent,
-    AuthComponent 
+    AuthComponent ,
+    GetRequestComponent,
 
   ],
   entryComponents:[DialogForAddingComponent],
