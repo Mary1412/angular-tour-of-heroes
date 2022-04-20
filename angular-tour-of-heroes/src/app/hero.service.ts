@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { HEROES } from './mock-heroes';
-import { Observable, of } from 'rxjs';
+import { from, Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -14,7 +14,9 @@ import { Hero } from './hero-module/heroes/hero';
 
 export class HeroService {
 
-  private heroesUrl = 'http://localhost:3000/heroes';
+ // private heroesUrl = 'api/heroes11';
+ private heroesUrl = 'https://jsonplaceholder.typicode.com/posts';
+
   data=new Date();
   public isLoading:BehaviorSubject<boolean>=new BehaviorSubject<boolean>(true);
   
@@ -31,9 +33,14 @@ export class HeroService {
 
     getData():Observable<any>{
 
-      const url ="https://jsonplaceholder.typicode.com/posts";
+    const url ="api/heroes";
 
-      return this.http.get<any>(url)
+    const apiCall = fetch('https://jsonplaceholder.typicode.com/posts')
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+    return from(apiCall)
+
+      //return this.http.get<any>(this.heroesUrl)
 
     }
    

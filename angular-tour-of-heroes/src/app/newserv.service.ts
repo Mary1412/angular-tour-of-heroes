@@ -9,13 +9,14 @@ export class NewservService {
 
   constructor(private http: HttpClient) { }
 
-  private url ='http://localhost:3000/heroes';
+  private url ='api/users';
 
   getData():Observable<any>{
 
+   
     
 
-    return this.http.get<any>(this.url)
+   return this.http.get<any>(this.url)
 
 
   }
