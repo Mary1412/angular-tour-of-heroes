@@ -51,7 +51,7 @@ export class UserDetailComponent implements OnInit {
   
   save(): void {
     if (this.user) {
-      this.userService.updateUser(this.user)
+      this.userService.updateUser(this.user.id,this.user)
         .subscribe();
     }
     this.s=0;

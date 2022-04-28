@@ -28,7 +28,7 @@ constructor(private newservService: NewservService){}
 
   gdfa(){
     this.newservService.getData().subscribe((data: any)=>{
-      console.log(data);
+      console.log(data,'log');
       
     })
    /* fetch('https://jsonplaceholder.typicode.com/posts')

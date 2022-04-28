@@ -1,0 +1,88 @@
+users {
+    margin: 0 0 0 0;
+    list-style-type: none;
+ 
+    width: 15em;
+  }
+  
+  .posts li {
+    position: relative;
+    cursor: pointer;
+    list-style-type: none ;
+  }
+  
+  .posts li:hover {
+    left: .1em;
+   
+  }
+  
+  .posts a {
+    color: rgb(101, 230, 112);
+    text-decoration: none;
+    background-color: rgb(74, 240, 96);
+    margin: .5em;
+    padding: .3em 0;
+    height: 1.6em;
+    border-radius: 4px;
+    display: block;
+    width: 15%;
+    color: #3b572e;
+  
+  }
+  
+  .posts a:hover {
+    color: #3b572e;
+    background-color: #b5f3b3;
+  }
+  
+  .posts a:active {
+    background-color: #525252;
+    color: #e0f5e2;
+  }
+  
+  .posts .badge {
+    display: inline-block;
+    font-size: small;
+    color: rgb(206, 248, 213);
+    padding: 0.8em 0.7em 0 0.7em;
+    background-color: #437049;
+    line-height: 1em;
+    position: relative;
+    left: -1px;
+    top: -4px;
+    height: 1.8em;
+    min-width: 16px;
+    text-align: right;
+    margin-right: .8em;
+    border-radius: 4px 0 0 4px;
+    height: 20px;
+  }
+  
+  input {
+    display: block;
+    width: 100%;
+    padding: .5rem;
+    margin: 1rem 0;
+    box-sizing: border-box;
+  }
+  
+  button.delete {
+    position: absolute;
+    left: 210px;
+    top: 0px;
+    background-color: rgb(8, 95, 23);
+    color:  #000000;
+    font-size: 1.1rem;
+    margin: 0;
+    height: 30px;
+   
+  }
+  
+  button.delete:hover {
+    background-color: rgb(95, 224, 117);
+  }
+  
+  *{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  

@@ -1,0 +1,48 @@
+<nav>
+    <a  [class.mat-elevation-z8]="!isActive" routerLink="/first">Start</a>
+    <a  [class.mat-elevation-z8]="!isActive" routerLink="/message">Messages</a>
+  </nav>
+
+<div *ngIf="post">
+
+    <br>
+<br>
+
+   
+    
+    <h2>{{post.id}}<hr> <br>{{post.title}} <hr> <br>{{post.body}} <hr></h2>
+    
+    <button mat-raised-button type="button" (click)="setting()">
+        Setting
+    </button>
+
+    <div *ngIf="s==1">
+
+    <div><span>id: </span>{{post.id}}</div>
+    <div>
+        <mat-form-field>
+        <mat-label for="hero-name">User name: </mat-label>
+        <input matInput [formControl]='nameControl' id="user-name" [(ngModel)]="post.title" placeholder="name">
+    </mat-form-field>
+    </div>
+    <div>
+    <mat-form-field>
+        <mat-label for="hero-surname">User surname: </mat-label>
+        <input matInput [formControl]='nameControl2' id="user-surname" [(ngModel)]="post.body" placeholder="surname">
+    </mat-form-field> 
+    </div>
+    
+    <button mat-raised-button  type="button" (click)="save()">save</button></div>
+    <button mat-raised-button type="button" (click)="goBack()">go back</button>
+
+    <br><br>
+    <h2>list of comments:</h2>
+    
+    <br>
+    <ul class="comments">
+        <li *ngFor="let com of comments">
+            <span class="badge">{{com.id}}</span> {{com.name}}
+        </li>
+      </ul>
+
+</div>

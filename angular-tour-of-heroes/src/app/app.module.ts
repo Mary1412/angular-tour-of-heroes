@@ -14,7 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-import { InMemoryDataService } from './in-memory-data.service';
+//import { InMemoryDataService } from './in-memory-data.service';
 
 import { HeroSearchComponent } from './hero-module/hero-search/hero-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -54,6 +54,10 @@ import { HeroesComponent } from './hero-module/heroes/heroes.component';
 import { ParamsModel } from './hero.service';
 import { AuthComponent } from './auth/auth.component';
 import { GetRequestComponent } from './get-request.component';
+import { PostComponent } from './post/post.component';
+import { PostDetailComponent } from './post-detail/post-detail.component';
+import { Search2Pipe } from './post/searchPost.pipe';
+
 
 
 
@@ -70,6 +74,7 @@ import { GetRequestComponent } from './get-request.component';
   declarations: [
     AppComponent,
     HeroesComponent,
+    Search2Pipe,
     
     MessagesComponent,
     DashboardComponent,
@@ -88,6 +93,9 @@ import { GetRequestComponent } from './get-request.component';
     DialogForExistingComponent,
     AuthComponent ,
     GetRequestComponent,
+    PostComponent,
+    PostDetailComponent,
+    
 
   ],
   entryComponents:[DialogForAddingComponent],
@@ -96,10 +104,10 @@ import { GetRequestComponent } from './get-request.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
+    /*HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, {dataEncapsulation: false}
       
-    ),
+    ),*/
     BrowserAnimationsModule,
     MatSliderModule,
     MatButtonModule,

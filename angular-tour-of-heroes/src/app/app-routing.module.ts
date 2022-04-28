@@ -14,10 +14,14 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UsersComponent } from './users/users.component';
 import { HeroesComponent } from './hero-module/heroes/heroes.component';
 import { AuthComponent } from './auth/auth.component';
+import { PostComponent } from './post/post.component';
+import { PostDetailComponent } from './post-detail/post-detail.component';
 
 
 const routes: Routes = [
   { path: 'heroes', component:HeroesComponent},
+  { path: 'post', component:PostComponent},
+  { path: 'detailpost/:id/:title', component:PostDetailComponent},
   { path: 'users', component:UsersComponent},
   { path: 'dashboard', component:DashboardComponent},
   

@@ -2,56 +2,58 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 //import { USERS } from '../mock-users';
-import { User } from './user';
+import { Post } from './post';
 import { UserService } from '../user.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogForAddingComponent } from '../dialog-for-adding/dialog-for-adding.component';
 
 import { DialogForDeletingComponent } from '../dialog-for-deleting/dialog-for-deleting.component';
+import { PostService } from '../post.service';
 
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  selector: 'app-post',
+  templateUrl: './post.component.html',
+  styleUrls: ['./post.component.css']
 })
 
-export class UsersComponent implements OnInit {
+export class PostComponent implements OnInit {
   [x: string]: any;
   isActive = false;
+  searchStr1="";
 
   //users = USERS;
   nameControl: FormControl = new FormControl;
-  users: User[]=[];
+  posts: Post[]=[];
 
 
-  constructor(private userService: UserService , public dialog: MatDialog) { }
+  constructor(private postService: PostService , public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.getUsers();
+    this.getPosts();
   }
 
   
-  getUsers(): void{
-  this.userService.getUsers()
-    .subscribe(users => this.users = users);
+  getPosts(): void{
+  this.postService.getPosts()
+    .subscribe(posts => this.posts = posts);
 }
 
 
 
 
 
-  add(name: string, surname: string): void {
+  add(title: string): void {
     let dr=this.dialog.open(DialogForAddingComponent);
 
     dr.afterClosed().subscribe(result => {
       if(result) {
-        name = name.trim();
-        surname = surname.trim();
-        if (!name || !surname) { return; }
-        this.userService.addUser({ name, surname } as User)
-          .subscribe(user => {
-            this.users.push(user);
+        title = title.trim();
+        
+        if (!title ) { return; }
+        this.postService.addPost({ title } as Post)
+          .subscribe(post => {
+            this.posts.push(post);
           });
     
       }
@@ -60,12 +62,12 @@ export class UsersComponent implements OnInit {
   
   }
 
-  delete(user: User): void {
+  delete(post: Post): void {
     let dr2=this.dialog.open( DialogForDeletingComponent );
   dr2.afterClosed().subscribe(result => {
     if(result) {
-    this.users = this.users.filter(u => u !== user);
-    this.userService.deleteUser(user.id,user.name, user.surname).subscribe();
+    this.posts = this.posts.filter(u => u !== post);
+    this.postService.deletePost(post.id,post.title).subscribe();
   }
 })
 

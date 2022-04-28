@@ -14,7 +14,7 @@ import { BehaviorSubject } from 'rxjs';
 
 export class UserService {
 
-  private usersUrl = 'api/users';
+  private usersUrl = 'http://localhost:3000/users ';
   data=new Date();
   
   
@@ -52,7 +52,8 @@ export class UserService {
   }
 
   getUser(id: number, name: string, surname:string): Observable<User> {
-    const url = `${this.usersUrl}/${id}`;
+   //s const url22='http://localhost:3000/users/1/';
+    const url = `http://localhost:3000/users/${id}`;
     return this.http.get<User>(url).pipe(
       tap(_ => this.log(`fetched user id=${id} name=${name} surname=${surname}  `)),
       catchError(this.handleError<User>(`getUser id=${id} name=${name} surname=${surname} `))
@@ -69,8 +70,9 @@ export class UserService {
   }
 
 
-  updateUser(user: User): Observable<any> {
-    return this.http.put(this.usersUrl, user, this.httpOptions).pipe(
+  updateUser(id: number,user: User): Observable<any> {
+    const url = `http://localhost:3000/users/${id}`;
+    return this.http.put(url, user, this.httpOptions).pipe(
       tap(_ => this.log(`updated user id=${user.id} name=${user.name}  name=${user.surname} `)),
       catchError(this.handleError<any>('updateUser'))
     );
@@ -78,7 +80,8 @@ export class UserService {
 
   deleteUser(id: number, name:string, surname:string): Observable<User> {
     this.data=new Date();
-    const url = `${this.usersUrl}/${id}`;
+    //const url = `${this.usersUrl}/${id}`;
+    const url = `http://localhost:3000/users/${id}`;
     return this.http.delete<User>(url, this.httpOptions).pipe(
       tap(_ => this.log(`deleted user id=${id} name=${name} surname=${surname} `)),
       catchError(this.handleError<User>('deleteUser'))

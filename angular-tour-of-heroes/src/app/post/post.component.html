@@ -1,0 +1,34 @@
+
+ <nav>
+  <a  [class.mat-elevation-z8]="!isActive" routerLink="/first">Start</a>
+  <a  [class.mat-elevation-z8]="!isActive" routerLink="/message">Messages</a>
+</nav>
+
+
+
+<div>
+  <mat-form-field >
+    <mat-label>Filter of text</mat-label>
+    <input matInput id="first_name" class="validate" [(ngModel)]="searchStr1"><br> 
+</mat-form-field>
+<br>
+
+    <mat-form-field>
+      <input matInput placeholder="Name" class="aaa" [formControl]='nameControl' id="new-hero" #postName>
+  </mat-form-field>
+   <br>
+    <button mat-raised-button  type="button" class="add-button" (click)="add(postName.value); postName.value='';">
+      Add post
+    </button>
+  </div>
+
+
+<ul class="posts">
+    <li *ngFor="let post of posts | searchPost:searchStr1">
+      <a routerLink="/detailpost/{{post.id}}/{{post.title}}">
+        <span class="badge">{{post.id}}</span> {{post.title}}
+      </a>
+      <button mat-raised-button  type="button" class="delete" title="delete post"
+      (click)="delete(post)">x</button>
+    </li>
+  </ul>

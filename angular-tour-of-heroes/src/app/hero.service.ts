@@ -15,7 +15,7 @@ import { Hero } from './hero-module/heroes/hero';
 export class HeroService {
 
  // private heroesUrl = 'api/heroes11';
- private heroesUrl = 'https://jsonplaceholder.typicode.com/posts';
+ private heroesUrl = 'http://localhost:3000/heroes';
 
   data=new Date();
   public isLoading:BehaviorSubject<boolean>=new BehaviorSubject<boolean>(true);
@@ -33,14 +33,8 @@ export class HeroService {
 
     getData():Observable<any>{
 
-    const url ="api/heroes";
 
-    const apiCall = fetch('https://jsonplaceholder.typicode.com/posts')
-    .then((response) => response.json())
-    .then((json) => console.log(json));
-    return from(apiCall)
-
-      //return this.http.get<any>(this.heroesUrl)
+      return this.http.get<any>(this.heroesUrl)
 
     }
    
@@ -57,7 +51,8 @@ export class HeroService {
     }
 
     getHero(id: number, name: string): Observable<Hero> {
-      const url = `${this.heroesUrl}/${id}`;
+      //const url = `${this.heroesUrl}/${id}`;
+      const url = `http://localhost:3000/heroes/${id}`;
       return this.http.get<Hero>(url).pipe(
         tap(_ => this.log(`fetched hero id=${id} name=${name}  `)),
         catchError(this.handleError<Hero>(`getHero id=${id} name=${name} `))
@@ -102,7 +97,8 @@ export class HeroService {
 
   deleteHero(id: number, name:string): Observable<Hero> {
     this.data=new Date();
-    const url = `${this.heroesUrl}/${id}`;
+   // const url = `${this.heroesUrl}/${id}`;
+   const url = `http://localhost:3000/heroes/${id}`;
     return this.http.delete<Hero>(url, this.httpOptions).pipe(
       tap(_ => this.log(`deleted hero id=${id} name=${name} `)),
       catchError(this.handleError<Hero>('deleteHero'))
