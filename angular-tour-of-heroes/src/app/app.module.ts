@@ -57,6 +57,7 @@ import { GetRequestComponent } from './get-request.component';
 import { PostComponent } from './post/post.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { Search2Pipe } from './post/searchPost.pipe';
+import { ProfilPageComponent } from './profil-page/profil-page.component';
 
 
 
@@ -75,7 +76,7 @@ import { Search2Pipe } from './post/searchPost.pipe';
     AppComponent,
     HeroesComponent,
     Search2Pipe,
-    
+    ProfilPageComponent,
     MessagesComponent,
     DashboardComponent,
     HeroSearchComponent,

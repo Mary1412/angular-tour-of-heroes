@@ -16,6 +16,7 @@ import { HeroesComponent } from './hero-module/heroes/heroes.component';
 import { AuthComponent } from './auth/auth.component';
 import { PostComponent } from './post/post.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { ProfilPageComponent } from './profil-page/profil-page.component';
 
 
 const routes: Routes = [
@@ -24,7 +25,7 @@ const routes: Routes = [
   { path: 'detailpost/:id/:title', component:PostDetailComponent},
   { path: 'users', component:UsersComponent},
   { path: 'dashboard', component:DashboardComponent},
-  
+  { path: 'profil', component:ProfilPageComponent},
   { path: 'detailuser/:id/:name', component:UserDetailComponent},
   { path: 'message', component:MessagesComponent},
   { path: 'first2', component:FirstCompComponent, canActivate: [AuthGuard]},
