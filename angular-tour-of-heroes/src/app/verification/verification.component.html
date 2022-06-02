@@ -4,7 +4,7 @@
     <fieldset [formGroup]="verControl">
         <mat-form-field appearance="fill">
             <mat-label>login</mat-label>
-        <input matInput placeholder="login" formControlName="loginFormControl" required><br>
+        <input matInput placeholder="login" id="log" formControlName="loginFormControl" required [(ngModel)]="log"><br>
         <mat-error *ngIf="!verControl">
             only letters, digits
           </mat-error>
@@ -12,7 +12,7 @@
         <br>
         <mat-form-field appearance="fill">
             <mat-label>secreat word</mat-label>
-        <input matInput placeholder="login" formControlName="swFormControl" required><br>
+        <input matInput placeholder="login" id="sw" formControlName="swFormControl" required [(ngModel)]="secret"><br>
         <mat-error *ngIf="!verControl  ">
             required
           </mat-error>
@@ -23,4 +23,6 @@
 
     </fieldset>
   </mat-card>
+
+ 
 

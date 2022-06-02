@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -61,7 +62,11 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+    const jsonData = JSON.stringify(this.login)
+    localStorage.setItem('login', '')
+    localStorage.setItem('sw', '')
+    localStorage.setItem('passw1', '')
+    localStorage.setItem('passw2', '')
   }
 
 }
