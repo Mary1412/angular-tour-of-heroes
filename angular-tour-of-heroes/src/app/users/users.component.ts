@@ -23,12 +23,17 @@ export class UsersComponent implements OnInit {
   //users = USERS;
   nameControl: FormControl = new FormControl;
   users: User[]=[];
+  
+  l1:string='';
+  
+login1:string='';
 
 
   constructor(private userService: UserService , public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getUsers();
+    this.l1=String(localStorage.getItem('login1')).split('"').join('');
   }
 
   

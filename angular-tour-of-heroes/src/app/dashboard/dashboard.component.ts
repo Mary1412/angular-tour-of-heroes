@@ -11,12 +11,17 @@ import { Hero } from '../hero-module/heroes/hero';
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[]=[];
+  l1:string='';
+  
+  login1:string='';
 
   constructor(private heroService: HeroService) { }
 
   ngOnInit(): void {
     this.getHeroes();
     this.nameControl = new FormControl(' ');
+    this.nameControl = new FormControl(' ');
+    this.l1=String(localStorage.getItem('login1')).split('"').join('');
   }
 
   getHeroes(): void {

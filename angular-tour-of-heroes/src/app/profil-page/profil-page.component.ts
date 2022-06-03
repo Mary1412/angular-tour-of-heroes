@@ -20,6 +20,9 @@ export class ProfilPageComponent implements OnInit {
   @Input() user?: User;
   
 
+  l1:string='';
+  
+login1:string='';
   constructor(
     private route: ActivatedRoute,
     private userService: UserService,
@@ -28,6 +31,7 @@ export class ProfilPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUser();
+    this.l1=String(localStorage.getItem('login1')).split('"').join('');
   }
 
   s=0;

@@ -9,7 +9,7 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   isActive = true;
-  login = "";
+  l1:string='';
   
 
 
@@ -23,6 +23,8 @@ export class LoginComponent implements OnInit {
 
 
 
+
+login1:string='';
 
 
   l=0;
@@ -67,6 +69,16 @@ export class LoginComponent implements OnInit {
     localStorage.setItem('sw', '')
     localStorage.setItem('passw1', '')
     localStorage.setItem('passw2', '')
+    localStorage.setItem('login1', '')
+  }
+
+  login(){
+    this.login1=(<HTMLInputElement>document.getElementById('l1')).value;
+    
+    const jsonData5 = JSON.stringify(this.login1)
+    localStorage.setItem('login1', jsonData5)
+    
+    
   }
 
 }

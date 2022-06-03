@@ -12,6 +12,10 @@ export class FirstCompComponent implements OnInit {
   nameControl: FormControl = new FormControl;
   isActive = false;
 
+  l1:string='';
+  
+login1:string='';
+
   data=new Date();
   changeData(){
     this.data=new Date();
@@ -19,6 +23,10 @@ export class FirstCompComponent implements OnInit {
 
   ngOnInit(): void {
     this.nameControl = new FormControl(' ');
+    this.l1=String(localStorage.getItem('login1')).split('"').join('');
+
   }
+
+
 
 }

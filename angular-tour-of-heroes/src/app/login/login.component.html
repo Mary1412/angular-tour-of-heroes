@@ -5,7 +5,7 @@
 
     <mat-form-field appearance="fill">
         <mat-label>login</mat-label>
-        <input matInput placeholder="login" formControlName="loginFormControl" required><br>
+        <input matInput placeholder="login" id="l1" formControlName="loginFormControl"  [(ngModel)]="l1"  required><br>
         <mat-error *ngIf="!logControl">
             only letters, digits
           </mat-error>
@@ -18,7 +18,7 @@
                 It is not empty
               </mat-error> </mat-form-field>
         <br>
-       <button mat-raised-button color="primary" *ngIf="logControl.valid" routerLink="/first2">Login</button>
+       <button mat-raised-button color="primary" *ngIf="logControl.valid" (click)="login()" routerLink="/first2">Login</button>
        <a mat-raised-button routerLink="/signup9" (click)="movep()" >Sign up</a><br><br>
        <a class="linkpas" (click)="movep2()">Forgot your password?</a>
 

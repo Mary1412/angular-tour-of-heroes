@@ -21,6 +21,9 @@ export class MessagesComponent implements OnInit, OnChanges {
 
 
   
+  l1:string='';
+  
+login1:string='';
 
   constructor(public messageService: MessageService, private _changeDetectorRef: ChangeDetectorRef) {
    
@@ -37,6 +40,8 @@ export class MessagesComponent implements OnInit, OnChanges {
 
 
   ngOnInit(): void {
+    
+    this.l1=String(localStorage.getItem('login1')).split('"').join('');
   }
 
 }

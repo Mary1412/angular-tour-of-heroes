@@ -26,11 +26,15 @@ export class PostComponent implements OnInit {
   nameControl: FormControl = new FormControl;
   posts: Post[]=[];
 
+  l1:string='';
+  
+login1:string='';
 
   constructor(private postService: PostService , public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getPosts();
+    this.l1=String(localStorage.getItem('login1')).split('"').join('');
   }
 
   

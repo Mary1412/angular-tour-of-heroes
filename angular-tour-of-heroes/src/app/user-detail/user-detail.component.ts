@@ -16,6 +16,9 @@ export class UserDetailComponent implements OnInit {
   nameControl2: FormControl = new FormControl;
  
   isActive = false;
+  l1:string='';
+  
+login1:string='';
 
   @Input() user?: User;
   
@@ -28,6 +31,7 @@ export class UserDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUser();
+    this.l1=String(localStorage.getItem('login1')).split('"').join('');
   }
 
   s=0;

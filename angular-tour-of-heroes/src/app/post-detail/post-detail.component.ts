@@ -25,7 +25,9 @@ export class PostDetailComponent implements OnInit {
   posts: Post[]=[];
   comments: Com[]=[];
   
-
+  l1:string='';
+  
+  login1:string='';
   constructor(
     private route: ActivatedRoute,
     private postService: PostService,
@@ -35,6 +37,7 @@ export class PostDetailComponent implements OnInit {
   ngOnInit(): void {
     this.getPost();
     this.getCom();
+    this.l1=String(localStorage.getItem('login1')).split('"').join('');
   }
 
   getCom(): void{

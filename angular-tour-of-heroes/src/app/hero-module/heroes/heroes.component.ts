@@ -46,7 +46,9 @@ export class HeroesComponent implements OnInit {
 
   public searchTerms2 = new Subject<string>();
   
+  l1:string='';
   
+  login1:string='';
 
  
 
@@ -58,6 +60,8 @@ export class HeroesComponent implements OnInit {
   
   ngOnInit(): void {
     this.getHeroes();
+    this.nameControl = new FormControl(' ');
+    this.l1=String(localStorage.getItem('login1')).split('"').join('');
   }
 
  public helloString: string= "";
