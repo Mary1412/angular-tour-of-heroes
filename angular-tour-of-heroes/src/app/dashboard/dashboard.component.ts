@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit {
   l1:string='';
   
   login1:string='';
+  url:any=""
 
   constructor(private heroService: HeroService) { }
 
@@ -22,6 +23,7 @@ export class DashboardComponent implements OnInit {
     this.nameControl = new FormControl(' ');
     this.nameControl = new FormControl(' ');
     this.l1=String(localStorage.getItem('login1')).split('"').join('');
+    this.url=String(localStorage.getItem('url')).split('"').join('');
   }
 
   getHeroes(): void {

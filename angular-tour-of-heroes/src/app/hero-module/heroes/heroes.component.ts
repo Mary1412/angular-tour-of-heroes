@@ -49,6 +49,7 @@ export class HeroesComponent implements OnInit {
   l1:string='';
   
   login1:string='';
+  url:any="";
 
  
 
@@ -62,6 +63,7 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
     this.nameControl = new FormControl(' ');
     this.l1=String(localStorage.getItem('login1')).split('"').join('');
+    this.url=String(localStorage.getItem('url')).split('"').join('');
   }
 
  public helloString: string= "";

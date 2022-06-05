@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
 
 login1:string='';
-
+hide = true;
 
   l=0;
   s=0;
@@ -70,6 +70,9 @@ login1:string='';
     localStorage.setItem('passw1', '')
     localStorage.setItem('passw2', '')
     localStorage.setItem('login1', '')
+    localStorage.setItem('log1', '')
+    localStorage.setItem('log2', '')
+    localStorage.setItem('url', 'https://i.pinimg.com/originals/ba/66/02/ba6602a51ea3490764cb1e03ea28fae8.jpg')
   }
 
   login(){
@@ -80,5 +83,7 @@ login1:string='';
     
     
   }
+
+  
 
 }

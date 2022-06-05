@@ -15,6 +15,7 @@ export class FirstCompComponent implements OnInit {
   l1:string='';
   
 login1:string='';
+url:any=""
 
   data=new Date();
   changeData(){
@@ -24,6 +25,7 @@ login1:string='';
   ngOnInit(): void {
     this.nameControl = new FormControl(' ');
     this.l1=String(localStorage.getItem('login1')).split('"').join('');
+    this.url=String(localStorage.getItem('url')).split('"').join('');
 
   }
 

@@ -21,6 +21,7 @@ export class UserDetailComponent implements OnInit {
 login1:string='';
 
   @Input() user?: User;
+  url:any="";
   
 
   constructor(
@@ -32,6 +33,7 @@ login1:string='';
   ngOnInit(): void {
     this.getUser();
     this.l1=String(localStorage.getItem('login1')).split('"').join('');
+    this.url=String(localStorage.getItem('url')).split('"').join('');
   }
 
   s=0;

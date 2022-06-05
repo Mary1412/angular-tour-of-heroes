@@ -14,6 +14,7 @@ export class ProfilPageComponent implements OnInit {
 
   nameControl: FormControl = new FormControl;
   nameControl2: FormControl = new FormControl;
+
  
   isActive = false;
 
@@ -32,6 +33,7 @@ login1:string='';
   ngOnInit(): void {
     this.getUser();
     this.l1=String(localStorage.getItem('login1')).split('"').join('');
+    
   }
 
   s=0;
@@ -60,5 +62,44 @@ login1:string='';
     }
     this.s=0;
   }
+
+
+
+
+
+  url: any="https://i.pinimg.com/originals/ba/66/02/ba6602a51ea3490764cb1e03ea28fae8.jpg"; 
+	msg = "";
+  
+	
+
+	selectFile(event: any) { 
+		if(!event.target.files[0] || event.target.files[0].length == 0) {
+			this.msg = 'You must select an image';
+			
+      return;
+      
+		}
+		
+		var mimeType = event.target.files[0].type;
+		
+		if (mimeType.match(/image\/*/) == null) {
+			this.msg = "Only images are supported";
+			return;
+		}
+		
+		var reader = new FileReader();
+		reader.readAsDataURL(event.target.files[0]);
+		
+		reader.onload = (_event) => {
+			this.msg = "";
+			this.url = reader.result; 
+      const jsonData5 = JSON.stringify(this.url)
+      localStorage.setItem('url', jsonData5)
+		}
+	}
+
+
+
+
 
 }

@@ -7,7 +7,7 @@
 color: black;
 padding: 3px;
 font-size: large;">{{l1}}</a>
-  <a  routerLink="/profil"><img src="https://i.pinimg.com/originals/ba/66/02/ba6602a51ea3490764cb1e03ea28fae8.jpg" alt="Avatar" class="avatar" style="
+  <a  routerLink="/profil"><img [src]="url" alt="Avatar" class="avatar" style="
     vertical-align: middle;
     width: 50px;
     height: 50px;
@@ -23,13 +23,18 @@ font-size: large;">{{l1}}</a>
   </nav>
 
 
+    <div >
+      <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+      <div><img [src]="url" *ngIf="url" alt="Avatar" class="avatar" style="
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;"></div>
+      <p>
+        <input type="file" (change)="selectFile($event)" >
+      </p>
+    </div>
 
-    <img src="https://i.pinimg.com/originals/ba/66/02/ba6602a51ea3490764cb1e03ea28fae8.jpg" alt="Avatar" class="avatar" style="
-    vertical-align: middle;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;">
-    
     <h2>Name:{{l1}} <br>
         
 

@@ -10,13 +10,15 @@ export class RepasswordComponent implements OnInit {
  
   isActive = true;
   constructor() { }
+  hide = true;
+  hide1 = true;
 
   p1:string='';
   p2:string='';
 
   ngOnInit(): void {
-    this.p1=String(localStorage.getItem('passw1')).split('"').join('');
-    this.p2=String(localStorage.getItem('passw2')).split('"').join('');
+    this.passw1=String(localStorage.getItem('passw1')).split('"').join('');
+    this.passw2=String(localStorage.getItem('passw2')).split('"').join('');
   }
 
 

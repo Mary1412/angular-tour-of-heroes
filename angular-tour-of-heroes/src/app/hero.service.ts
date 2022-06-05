@@ -117,8 +117,9 @@ export class HeroService {
     if (!term.trim()) {
       return of([]);
     }
+    const url = `http://localhost:3000/heroes/?name=${term}`;
     this.data=new Date();
-    return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
+    return this.http.get<Hero[]>(url).pipe(
       tap(x => x.length ?
          this.log(`found heroes matching "${term}"`) :
          this.log(`no heroes matching "${term} "`)),

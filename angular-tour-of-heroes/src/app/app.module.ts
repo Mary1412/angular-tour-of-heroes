@@ -58,6 +58,7 @@ import { PostComponent } from './post/post.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { Search2Pipe } from './post/searchPost.pipe';
 import { ProfilPageComponent } from './profil-page/profil-page.component';
+import {MatIconModule} from '@angular/material/icon';
 
 
 
@@ -119,7 +120,8 @@ import { ProfilPageComponent } from './profil-page/profil-page.component';
     MatCardModule,
     MatProgressBarModule,
     MatDialogModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatIconModule
     
   ],
   providers: [ {provide:HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}],

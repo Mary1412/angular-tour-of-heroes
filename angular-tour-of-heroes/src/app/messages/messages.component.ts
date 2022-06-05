@@ -36,11 +36,12 @@ login1:string='';
 
   @Input()
   mess: any;
+  url:any="";
 
 
 
   ngOnInit(): void {
-    
+    this.url=String(localStorage.getItem('url')).split('"').join('');
     this.l1=String(localStorage.getItem('login1')).split('"').join('');
   }
 

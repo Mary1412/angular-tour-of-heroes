@@ -20,6 +20,8 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class SignupComponent implements OnInit {
   isActive = true;
   constructor() { }
+  hide = true;
+  hide1 = true;
 
   
  
@@ -27,14 +29,17 @@ export class SignupComponent implements OnInit {
 
     signupControl=new FormGroup({
      
-      emailFormControl: new FormControl('', [Validators.required, Validators.email]),
+  emailFormControl: new FormControl('', [Validators.required, Validators.email]),
   nameFormControl : new FormControl('', [Validators.required, Validators.pattern('^[а-яА-ЯёЁa-zA-Z0-9]+$')]),
   surnameFormControl : new FormControl('', [Validators.required, Validators.pattern('^[а-яА-ЯёЁa-zA-Z0-9]+$')]),
   loginFormControl : new FormControl('', [Validators.required, Validators.pattern('^[а-яА-ЯёЁa-zA-Z0-9]+$')]),
   pas1FormControl : new FormControl('', [Validators.required]),
-  pas2FormControl : new FormControl('', [Validators.required]),
-  butFormControl : new FormControl('', [Validators.required])
+  pas2FormControl : new FormControl('', [Validators.required])
   })
+
+  
+
+  
 
 
  

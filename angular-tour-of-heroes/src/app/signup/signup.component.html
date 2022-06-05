@@ -39,20 +39,30 @@
           </mat-form-field>`
         <br>
         <mat-form-field appearance="fill">
-            <mat-label> password</mat-label>
-            <input matInput placeholder="password" formControlName="pas1FormControl" [errorStateMatcher]="matcher"  required><br>
-            <mat-error *ngIf=" !signupControl">
-                It is not empty
-              </mat-error>
-        </mat-form-field>
+          <mat-label> Enter password</mat-label>
+
+          <input matInput [type]="hide ? 'password' : 'text'" placeholder="password" formControlName="pas1FormControl"required>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+
+         
+          <mat-error *ngIf="!signupControl">
+              It is not empty
+            </mat-error> </mat-form-field>
+     
         <br>
         <mat-form-field appearance="fill">
-            <mat-label> password second time</mat-label>
-            <input matInput placeholder="password" formControlName="pas2FormControl" [errorStateMatcher]="matcher"  required><br>
-            <mat-error *ngIf="!signupControl">
-                It is not empty
-              </mat-error>
-        </mat-form-field>
+          <mat-label> Enter password second time</mat-label>
+
+          <input matInput [type]="hide1 ? 'password' : 'text'" placeholder="password" formControlName="pas2FormControl"required>
+          <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
+            <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+
+          <mat-error *ngIf="!signupControl">
+              It is not empty
+            </mat-error> </mat-form-field>
         <br>
         <mat-form-field appearance="fill">
             <mat-label>secret word</mat-label>
@@ -63,7 +73,7 @@
 
       </fieldset>
 
-       <button mat-raised-button color="primary" *ngIf="!signupControl.valid" (click)="movep()">Sign up</button>
+       <button mat-raised-button color="primary" *ngIf="signupControl.valid" (click)="movep()">Sign up</button>
       
        <a mat-raised-button href="#" (click)="movep()">Login</a><br><br>
   </mat-card>
