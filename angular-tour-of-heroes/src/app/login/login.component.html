@@ -24,7 +24,7 @@
                 It is not empty
               </mat-error> </mat-form-field>
         <br>
-       <button mat-raised-button color="primary" *ngIf="logControl.valid" (click)="login()" routerLink="/first2">Login</button>
+       <button mat-raised-button color="primary" [disabled]="!logControl.valid" (click)="login()" routerLink="/first2">Login</button>
        <a mat-raised-button (click)="movep()" >Sign up</a><br><br>
        <a class="linkpas" (click)="movep2()">Forgot your password?</a>
 

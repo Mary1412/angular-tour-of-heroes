@@ -73,7 +73,7 @@
 
       </fieldset>
 
-       <button mat-raised-button color="primary" *ngIf="signupControl.valid" (click)="movep()">Sign up</button>
+       <button mat-raised-button color="primary" [disabled]="!signupControl.valid" (click)="movep()">Sign up</button>
       
        <a mat-raised-button href="#" (click)="movep()">Login</a><br><br>
   </mat-card>
