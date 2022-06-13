@@ -14,7 +14,7 @@
     <br>
 <br>
 
-   
+   <div *ngIf="s2==1">
     
     <h2>{{post.id}}<hr> <br>{{post.title}} <hr> <br>{{post.body}} <hr></h2>
     
@@ -22,6 +22,8 @@
         Setting
     </button>
 
+
+</div>
     <div *ngIf="s==1">
 
     <div><span>id: </span>{{post.id}}</div>
@@ -43,12 +45,22 @@
 
     <br><br>
     <h2>list of comments:</h2>
-    
+    <mat-paginator [length]="500"
+                   [pageSize]="3"
+                   [pageSizeOptions]="[3,6,9]"
+                   (page)="OnPageChange($event)"
+                   >
+
+    </mat-paginator>
     <br>
-    <ul class="comments">
-        <li *ngFor="let com of comments">
-            <span class="badge">{{com.id}}</span> {{com.name}}
-        </li>
-      </ul>
+    <div align="left">
+        
+        <mat-card  [class.mat-elevation-z8]="isActive" class="com" *ngFor="let com of pageSlice">
+                 {{com.name}}
+            </mat-card>
+        
+    </div>
+        
+     
 
 </div>

@@ -1,3 +1,4 @@
+import { PageEvent } from '@angular/material/paginator';
 import { User } from '../users/user';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
@@ -15,6 +16,9 @@ import { Com } from '../post/Com';
 })
 export class PostDetailComponent implements OnInit {
 
+  title = 'pagin-app';
+  
+
   nameControl: FormControl = new FormControl;
   nameControl2: FormControl = new FormControl;
  
@@ -24,6 +28,8 @@ export class PostDetailComponent implements OnInit {
   @Input() com?: Com;
   posts: Post[]=[];
   comments: Com[]=[];
+  pageSlice: Com[]=[];
+  
   
   l1:string='';
   
@@ -36,21 +42,41 @@ export class PostDetailComponent implements OnInit {
     private location: Location
   ) {}
 
+
   ngOnInit(): void {
     this.getPost();
     this.getCom();
     this.l1=String(localStorage.getItem('login1')).split('"').join('');
-    this.url=String(localStorage.getItem('url')).split('"').join('');
+   console.log(this.pageSlice);
+
+   this.postService.geComments()
+   .subscribe(comments => this.pageSlice=comments.slice(0,3) );
+   
+
   }
 
   getCom(): void{
     this.postService.geComments()
-      .subscribe(comments => this.comments =comments);
+      .subscribe(comments => this.comments=comments);
+   
+  }
+   //public pageSlice = this.comments;
+
+  OnPageChange(event: PageEvent){
+    console.log(event);
+    const startIndex = event.pageIndex*event.pageSize;
+    let endIndex=startIndex+event.pageSize;
+    if(endIndex>this.comments.length){
+        endIndex=this.comments.length;
+    }
+    this.pageSlice=this.comments.slice(startIndex, endIndex);
   }
 
   s=0;
+  s2=1;
   setting(){
     this.s=1;
+    this.s2=0;
 
   }
 
@@ -73,6 +99,7 @@ export class PostDetailComponent implements OnInit {
         .subscribe();
     }
     this.s=0;
+    this.s2=1;
   }
 
 }

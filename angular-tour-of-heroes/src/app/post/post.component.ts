@@ -47,10 +47,18 @@ url:any="";
 
 
 
+s1=0;
+s2=1;
 
+add2(){
+  this.s1=1;
+  this.s2=2;
+}
 
   add(title: string): void {
     let dr=this.dialog.open(DialogForAddingComponent);
+    this.s1=0;
+    this.s2=1;
 
     dr.afterClosed().subscribe(result => {
       if(result) {

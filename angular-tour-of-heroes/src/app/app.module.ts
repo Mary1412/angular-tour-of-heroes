@@ -59,6 +59,7 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 import { Search2Pipe } from './post/searchPost.pipe';
 import { ProfilPageComponent } from './profil-page/profil-page.component';
 import {MatIconModule} from '@angular/material/icon';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -121,7 +122,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatProgressBarModule,
     MatDialogModule,
     MatDatepickerModule,
-    MatIconModule
+    MatIconModule,
+    MatPaginatorModule
     
   ],
   providers: [ {provide:HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}],
