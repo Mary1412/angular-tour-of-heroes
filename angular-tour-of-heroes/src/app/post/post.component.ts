@@ -9,6 +9,7 @@ import { DialogForAddingComponent } from '../dialog-for-adding/dialog-for-adding
 
 import { DialogForDeletingComponent } from '../dialog-for-deleting/dialog-for-deleting.component';
 import { PostService } from '../post.service';
+import { DialogForExistingComponent } from '../dialog-for-existing/dialog-for-existing.component';
 
 
 @Component({
@@ -49,42 +50,68 @@ url:any="";
 
 s1=0;
 s2=1;
+s3=1;
+s4=0;
+f1=1;
+f2=0;
+
+
+filter(){
+this.f1=0
+this.f2=5
+this.s3=0;
+this.s4=1;
+}
+close(){
+  this.f1=0
+  this.f2=1
+  }
+
+delete(post: Post): void {
+  let dr2=this.dialog.open( DialogForDeletingComponent );
+dr2.afterClosed().subscribe(result => {
+  if(result) {
+  this.posts = this.posts.filter(u => u !== post);
+  this.postService.deletePost(post.id,post.title).subscribe();
+}
+})
+
+}
+
+delete2(post: Post): void {
+  
+  this.posts = this.posts.filter(u => u !== post);
+  this.postService.deletePost(post.id,post.title).subscribe();
+
+
+}
 
 add2(){
   this.s1=1;
-  this.s2=2;
+  this.s2=0;
+
 }
+
+  post8!: Post;
 
   add(title: string): void {
     let dr=this.dialog.open(DialogForAddingComponent);
     this.s1=0;
     this.s2=1;
-
+   
     dr.afterClosed().subscribe(result => {
       if(result) {
         title = title.trim();
-        
         if (!title ) { return; }
         this.postService.addPost({ title } as Post)
           .subscribe(post => {
             this.posts.push(post);
           });
-    
       }
-     
     });
-  
+
   }
 
-  delete(post: Post): void {
-    let dr2=this.dialog.open( DialogForDeletingComponent );
-  dr2.afterClosed().subscribe(result => {
-    if(result) {
-    this.posts = this.posts.filter(u => u !== post);
-    this.postService.deletePost(post.id,post.title).subscribe();
-  }
-})
 
-}
 
 }

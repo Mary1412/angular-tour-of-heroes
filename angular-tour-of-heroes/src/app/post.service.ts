@@ -96,15 +96,6 @@ export class PostService {
     );
   }
 
-
-  updatePost(id: number,post: Post): Observable<any> {
-    const url = `http://jsonplaceholder.typicode.com/posts/${id}`;
-    return this.http.put<Post>(url, post, this.httpOptions).pipe(
-      tap(_ => this.log(`updated post userId=${post.userId} id=${post.id} title=${post.title} body=${post.body}  `)),
-      catchError(this.handleError<any>('updatePost'))
-    );
-  }
-
   deletePost(id: number, title:string): Observable<Post> {
     this.data=new Date();
     //const url = `${this.usersUrl}/${id}`;
@@ -114,6 +105,19 @@ export class PostService {
       catchError(this.handleError<Post>('deletePost'))
     );
   }
+
+
+
+
+  updatePost(id: number,post: Post): Observable<any> {
+    const url = `http://jsonplaceholder.typicode.com/posts/${id}`;
+    return this.http.put<Post>(url, post, this.httpOptions).pipe(
+      tap(_ => this.log(`updated post userId=${post.userId} id=${post.id} title=${post.title} body=${post.body}  `)),
+      catchError(this.handleError<any>('updatePost'))
+    );
+  }
+
+  
  
 
  

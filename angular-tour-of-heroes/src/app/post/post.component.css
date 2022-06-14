@@ -15,6 +15,17 @@ users {
     left: .1em;
    
   }
+
+  .posts li span {
+    position: relative;
+    cursor: pointer;
+    list-style-type: none ;
+  }
+  
+  .posts li span:hover {
+    left: .1em;
+   
+  }
   
   .posts a {
     color: rgb(101, 230, 112);
